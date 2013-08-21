@@ -1,0 +1,17 @@
+.DS_Store
+.pydevproject
+.settings
+.project
+*.pyc
+*.pyd
+*.so
+MANIFEST
+build
+dist
+sunpy.egg-info
+paver-minilib.zip
+doc/source/_build/*
+doc/source/reference/generated
+doc/html
+docs
+.tox/
