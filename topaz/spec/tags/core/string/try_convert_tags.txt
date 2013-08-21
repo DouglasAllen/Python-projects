@@ -1,0 +1,1 @@
+fails:String.try_convert does not rescue exceptions raised by #to_str

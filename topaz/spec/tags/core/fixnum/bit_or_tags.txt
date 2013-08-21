@@ -1,0 +1,2 @@
+fails:Fixnum#| returns self bitwise OR other
+fails:Fixnum#| raises a TypeError when passed a Float

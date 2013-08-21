@@ -1,0 +1,2 @@
+fails:Kernel#puts is a private method
+fails:Kernel#puts writes [...] for a recursive array arg

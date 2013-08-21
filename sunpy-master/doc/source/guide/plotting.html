@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Plotting in SunPy</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7514 2012-09-14 14:27:12Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="plotting-in-sunpy">
+<h1 class="title">Plotting in SunPy</h1>
+
+<p>SunPy makes use of <cite>matplotlib &lt;http://matplotlib.org/&gt;</cite> for all of its plotting needs
+as such tries to follow the matplotlib plotting philosophy.
+It is therefore useful to go over how matplotlib works as background.</p>
+<div class="section" id="matplotlib-tutorial">
+<h1>1. Matplotlib Tutorial</h1>
+<p>The tutorial provided here is a summary of one that can be found in the <cite>matplotlib
+usage documentation &lt;http://matplotlib.org/faq/usage_faq.html/&gt;</cite>.</p>
+<p>Matplotlib provides two main pathways for plotting. One is meant for interactive use
+(e.g. command-line) and the other for non-interactive use (e.g. modules). It is important
+to recognize though that the interactive-use pathway (referred to as pyplot) just
+provides shortcuts doing many of the more advanced non-interactive functions in the
+background. It is therefore possible to switch between the two as necessary and
+convenient and it is possible to use pyplot in non-interactive way. In this manner pyplot
+is just a shortcut making it quicker to set up plot axes and figures.
+In order to get access to the full interactive capabilities of pyplot it is
+necessary to turn this feature on. This will be discussed below.
+Pylab is another matplotlib usage scenario but it is essentially just pyplot with the
+interactive capabilities turned on and numpy and matplotlib imported into the main
+namespace.</p>
+</div>
+<div class="section" id="pyplot">
+<h1>2. Pyplot</h1>
+<p>Here is an example of pyplot usage</p>
+<pre class="literal-block">
+import matplotlib.pyplot as plt
+
+plt.plot(range(10), range(10))
+plt.title(&quot;A simple Plot&quot;)
+plt.show()
+</pre>
+<p>The show() command open a plot on the screen and blocks execution (meaning you can't
+do anything with the prompt or your script freezes) until the plot window is closed. For
+reasons that are not very clear, the creators of matplotlib designed the show() command
+so that it would only work once. If you were to call show() on the plt object again
+after the above code is executed nothing happens. Apparently, this confusing behavior
+is something that the matplotlib devs get complaints about often and so this may change
+in the future (or may already have changed depending on your choice of backend).
+A discussion about this can be found <cite>here
+&lt;http://stackoverflow.com/questions/5524858/matplotlib-show-doesnt-work-twice&gt;</cite>.
+Don't be confused by another command called draw(). This is only used while in interactive
+mode.</p>
+<p>To turn on interactivity for pyplot use the command</p>
+<pre class="literal-block">
+plt.ion()
+</pre>
+<p>In interactive mode, the plot will appear at the first plot() command and most
+commands will update the plot as you call them. Here is an example</p>
+<pre class="literal-block">
+plt.plot(range(10), range(10))
+plt.title(&quot;Simple Plot&quot;)
+</pre>
+<p>In this example, you'll see that the title appears right on the plot when you call it.
+Note that in this case the show command is useless as the plot shows up right when you
+create it. Also note that some commands will not automatically update the plot and
+you have to use the draw() command. The following command</p>
+<pre class="literal-block">
+plt.ioff()
+</pre>
+<p>turns off interactivity.</p>
+</div>
+<div class="section" id="advanced-pyplot">
+<h1>3. Advanced Pyplot</h1>
+<p>If you need more fine-grained control over plots the recommended path is to use pyplot
+and access the figures and axes objects. Here is an example</p>
+<pre class="literal-block">
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0, 10, 0.2)
+y = np.sin(x)
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(x, y)
+
+plt.show()
+</pre>
+<p>Figure is the top-level container for all plot elements and axes is the top-level container
+for a particular plot. So the above example, creates a figure then creates an axes
+and then uses the pyplot plot() method to populate the plot in ax. You generally don't need
+to mess with the figure object but with this method you now have your hands on the ax
+object so you can do this like change the labels on the x and y axes or add a legend, etc.
+do whatever you want to it. In the previous section, pyplot took care of creating these
+objects for you so you don't have to worry about creating them yourself.</p>
+</div>
+<div class="section" id="sunpy-plotting-standards">
+<h1>4. SunPy Plotting Standards</h1>
+<p>To be consistent with matplotlib, SunPy has developed a standard plotting policy which
+supports both simple and advanced matplotlib usage.</p>
+</div>
+<div class="section" id="peek">
+<h1>5. peek()</h1>
+<p>For quick and easy access to a plot
+all sunpy base objects (e.g. map, spectra, lightcurve) define their own peek() command.
+For example you can do the following</p>
+<pre class="literal-block">
+import sunpy
+
+smap = sunpy.make_map(sunpy.EIT_195_IMAGE)
+smap.peek(draw_limb=True)
+</pre>
+<p>This creates a plot window with all axes defined, a plot title, and the image of the map
+data all defined by the contents of the map. As this is command makes use of show(), in non-interactive
+mode the plot window blocks and must be closed before doing anything else. This is meant as a
+quick way to visualize the contents of a sunpy object you've created.</p>
+</div>
+<div class="section" id="plot">
+<h1>6. plot()</h1>
+<p>For more advanced plotting the base sunpy objects also provide a plot() command. This
+command is similar to the pyplot plot() command in that it will create a figure and axes
+object for you if you haven't already. It returns a figure object and does not create a
+plot window. With the figure object in your hands you can reach in and grab the axes
+and therefore manipulate the plot as you see fit. Here is an example of this at work</p>
+<pre class="literal-block">
+import sunpy
+import matplotlib.pyplot as plt
+
+smap = sunpy.make_map(sunpy.EIT_195_IMAGE)
+smap.plot()
+smap.draw_limb()
+
+plt.show()
+</pre>
+<p>This output of this example is equivalent to one in the previous section. The map.plot()
+command is equivalent to ax.plot(x,y) command which we introduced in section 3. Similar
+to that command it will create a figure for you if you haven't created on yourself. For
+advanced plotting you'll want to create it yourself.</p>
+<pre class="literal-block">
+fig = plt.figure()
+ax = plt.subplot(1,1,1)
+
+smap.plot()
+plt.colorbar()
+ax.plot([-1000,1000], [0,0], color=&quot;white&quot;)
+
+plt.show()
+</pre>
+<p>The above a plot of line across the map. Using the fig.gca() command to get access to the
+axes object most anything can be done to the plot and the plot can be displayed as usual
+using the show() command. Here is another example</p>
+<pre class="literal-block">
+from matplotlib import patches
+fig = plt.figure()
+ax = plt.subplot(1,1,1)
+
+smap.plot()
+rect = patches.Rectangle([-350, -650], 500, 500, color = 'white', fill=False)
+ax.add_artist(rect)
+
+plt.show()
+</pre>
+<p>Finally, here is a more complex example, starting from the beginning:</p>
+<pre class="literal-block">
+from matplotlib import patches
+import sunpy
+import matplotlib.pyplot as plt
+smap = sunpy.make_map(sunpy.AIA_171_IMAGE)
+submap = map.submap([-100-250, -100+250], [-400-250, -400+250])
+rect = patches.Rectangle([-100-250, -400-250], 500, 500, color = 'white', fill=False)
+
+fig = plt.figure()
+ax1 = fig.add_subplot(2,1,1)
+smap.plot()
+ax1.add_artist(rect)
+
+ax2 = fig.add_subplot(2,1,2)
+submap.plot()
+submap.draw_grid(grid_spacing=10)
+ax2.set_title('submap')
+fig.subplots_adjust(hspace=0.4)
+
+plt.show()
+</pre>
+<p>The above example creates two side by side plots one with the overall view of the Sun
+with a small area marked with a white box. That smaller view is then shown in the plot
+below it. The spacing between the two plots is controlled by fig.subplots_adjust().</p>
+</div>
+<div class="section" id="specifying-a-colormap">
+<h1>7. Specifying a Colormap</h1>
+<p>There are a number of color maps defined in SunPy which are used for data from
+particular missions (e.g. SDO/AIA).
+A simple example on how to use the color maps provided by SunPy:</p>
+<pre class="literal-block">
+from sunpy.cm import cm
+
+# cmlist is a dictionary with all of the color tables
+# to list all of the keys of the dictionary
+cm.cmlist.keys()
+
+# to grab a particular colortable then
+cmap = cm.cmlist.get('sdoaia94')
+
+# you can also get a visual representation of all of the color tables
+cm.show_colormaps()
+</pre>
+<img alt="../images/plotting_ex2.png" src="../images/plotting_ex2.png" />
+<p>These can be used with the standard commands to change the colormap:</p>
+<pre class="literal-block">
+import sunpy
+from sunpy.cm import cm
+
+cmap = cm.cmlist.get('sdoaia94')
+smap = sunpy.make_map(sunpy.AIA_171_IMAGE)
+
+fig = plt.figure()
+ax = plt.subplot(1,1,1)
+smap.plot(cmap=cmap)
+plt.show()
+</pre>
+</div>
+</div>
+</body>
+</html>

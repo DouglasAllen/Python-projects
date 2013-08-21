@@ -1,0 +1,1 @@
+fails:Random#seed returns the given seed coerced with #to_int

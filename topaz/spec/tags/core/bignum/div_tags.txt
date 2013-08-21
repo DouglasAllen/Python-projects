@@ -1,0 +1,2 @@
+fails:Bignum#div returns self divided by other
+fails:Bignum#div raises a TypeError when given a non-Integer

@@ -1,0 +1,2 @@
+fails:Fixnum#[] calls #to_int to coerce a String to a Bignum and returns 0
+fails:Fixnum#[] returns 0 when passed a Float in the range of a Bignum

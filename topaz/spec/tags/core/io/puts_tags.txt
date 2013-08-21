@@ -1,0 +1,2 @@
+fails:IO#puts writes just a newline when given just a newline
+fails:IO#puts writes [...] for a recursive array arg
