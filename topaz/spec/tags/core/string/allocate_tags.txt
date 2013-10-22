@@ -1,1 +1,0 @@
-fails:String.allocate returns a binary String

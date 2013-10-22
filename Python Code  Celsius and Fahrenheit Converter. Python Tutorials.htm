@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/ -->
+<html class="notie67" lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width"><script async="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/saved_resource"></script><script type="text/javascript" defer="" async="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/piwik.js"></script><script src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/acc_1033d759_pub" type="text/javascript" async="" defer=""></script><script src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/acc_1033d759_pub(1)" type="text/javascript" async="" defer=""></script><script id="twitter-wjs" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/widgets.js"></script><script type="text/javascript" async="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/ga.js"></script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><title>Python Code: Celsius and Fahrenheit Converter. Python Tutorials</title>
+<link rel="profile" href="http://gmpg.org/xfn/11"><link rel="stylesheet" type="text/css" media="all" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/style.css"><link rel="shortcut icon" href="http://www.pythonforbeginners.com/wp-content/themes/montezuma/images/favicon.ico" type="image/ico">
+<link rel="pingback" href="http://www.pythonforbeginners.com/xmlrpc.php">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.15 - http://yoast.com/wordpress/seo/ -->
+<meta name="description" content="Python Code: Celsius and Fahrenheit Converter. Python Tutorials">
+<link rel="canonical" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/Python Code  Celsius and Fahrenheit Converter. Python Tutorials.htm">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Code: Celsius and Fahrenheit Converter. Python Tutorials">
+<meta property="og:description" content="Python Code: Celsius and Fahrenheit Converter. Python Tutorials">
+<meta property="og:url" content="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/">
+<meta property="og:site_name" content="Python For Beginners">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Python For Beginners » Feed" href="http://www.pythonforbeginners.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Python For Beginners » Comments Feed" href="http://www.pythonforbeginners.com/comments/feed/">
+
+            <script type="text/javascript">//<![CDATA[
+            // Google Analytics for WordPress by Yoast v4.3.3 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-34983131-1']);
+				            _gaq.push(['_setCustomVar',1,'post_type','post',3],['_setCustomVar',2,'tags','code-snippets scripts',3],['_setCustomVar',3,'categories','code-snippets-source-code',3],['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //]]></script>
+			<link rel="alternate" type="application/rss+xml" title="Python For Beginners » Python Code: Celsius and Fahrenheit Converter Comments Feed" href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/feed/">
+<link rel="stylesheet" id="usernoise-button-css" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/button.css" type="text/css" media="all">
+<link rel="stylesheet" id="usernoise-form-css" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/form.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="mr_social_sharing-css" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/style_2.1.2.css" type="text/css" media="all">
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/jquery.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var usernoiseButton = {"text":"Feedback","style":"background-color: #404040; color: #FFFFFF","class":"un-left","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/usernoise.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/button.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/jquery.ui.effect.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var quicktagsL10n = {"closeAllOpenTags":"Close all open tags","closeTags":"close tags","enterURL":"Enter the URL","enterImageURL":"Enter the URL of the image","enterImageDescription":"Enter a description of the image","fullscreen":"fullscreen","toggleFullscreen":"Toggle fullscreen mode","textdirection":"text direction","toggleTextdirection":"Toggle Editor Text Direction"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/quicktags.min.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/smooth-menu.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/javascript.js"></script>
+<meta name="generator" content="WordPress 3.6.1">
+<link rel="shortlink" href="http://www.pythonforbeginners.com/?p=586">
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/shCore.js"></script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/shCore.css">
+<link type="text/css" rel="stylesheet" href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/shThemeEclipse.css">
+<style>
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('/fonts/YanoneKaffeesatz-Regular-webfont.eot');
+    src: url('/fonts/YanoneKaffeesatz-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/YanoneKaffeesatz-Regular-webfont.woff') format('woff'),
+         url('/fonts/YanoneKaffeesatz-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/YanoneKaffeesatz-Regular-webfont.svg#YanoneKaffeesatzRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Yanone Kaffeesatz Light';
+    src: url('/fonts/YanoneKaffeesatz-Light-webfont.eot');
+    src: url('/fonts/YanoneKaffeesatz-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/YanoneKaffeesatz-Light-webfont.woff') format('woff'),
+         url('/fonts/YanoneKaffeesatz-Light-webfont.ttf') format('truetype'),
+         url('/fonts/YanoneKaffeesatz-Light-webfont.svg#YanoneKaffeesatzRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+</style>
+<script type="text/javascript" async="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/embed.js"></script><script id="_influads_projs" type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/pro.js"></script><script id="_influads_projs" type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/pro.js"></script><script type="text/javascript" id="_bsaPRO_js" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/saved_resource(1)" async="async"></script></head>
+<body class="single single-post postid-586 single-format-standard" style="opacity: 1;" data-twttr-rendered="true">
+			
+	<div id="banner-bg" class="cf">
+	<div id="banner" class="row">
+		<div id="logo-area" class="col5">
+			<h3 id="sitetitle">
+				<a href="http://www.pythonforbeginners.com/"><span class="firstpart">Python For </span> Beginners </a>
+			</h3>
+			<p id="tagline"></p>
+		</div>
+		<nav id="menu1-wrapper" class="menu-wrapper col7"><ul id="menu1" class="cf menu"><li class="page-python-overview-start-here"><a href="http://www.pythonforbeginners.com/python-overview-start-here/"><i></i>Basics (Start)</a></li>
+<li class="page-dictionary"><a href="http://www.pythonforbeginners.com/dictionary/"><i></i>Dictionary</a></li>
+<li class="page-python-functions-cheat-sheet"><a href="http://www.pythonforbeginners.com/python-functions-cheat-sheet/"><i></i>Functions</a></li>
+<li class="page-python-lists-cheat-sheet"><a href="http://www.pythonforbeginners.com/python-lists-cheat-sheet/"><i></i>Lists</a></li>
+<li class="page-loops"><a href="http://www.pythonforbeginners.com/loops/"><i></i>Loops</a></li>
+<li class="page-python-modules"><a href="http://www.pythonforbeginners.com/python-modules/"><i></i>Modules</a></li>
+<li class="page-strings"><a href="http://www.pythonforbeginners.com/strings/"><i></i>Strings</a></li>
+<li class="page-sitemap"><a href="http://www.pythonforbeginners.com/sitemap/"><i></i>Sitemap</a></li>
+</ul><select class="menu1-mobile"><option value="#">Navigate to...</option><option value="http://www.pythonforbeginners.com/python-overview-start-here/">&nbsp;Basics (Start)</option><option value="http://www.pythonforbeginners.com/dictionary/">&nbsp;Dictionary</option><option value="http://www.pythonforbeginners.com/python-functions-cheat-sheet/">&nbsp;Functions</option><option value="http://www.pythonforbeginners.com/python-lists-cheat-sheet/">&nbsp;Lists</option><option value="http://www.pythonforbeginners.com/loops/">&nbsp;Loops</option><option value="http://www.pythonforbeginners.com/python-modules/">&nbsp;Modules</option><option value="http://www.pythonforbeginners.com/strings/">&nbsp;Strings</option><option value="http://www.pythonforbeginners.com/sitemap/">&nbsp;Sitemap</option></select></nav>
+	</div>
+</div>
+
+<a href="http://www.pythonforbeginners.com/feed/" class="rsslink" title="Subscribe to RSS Feed"></a>
+		
+
+<div id="breadcrumbs1-bg">
+	<nav id="breadcrumbs1" class="breadcrumbs lw">
+		<ol><li class="bc-home"><i></i><a href="http://www.pythonforbeginners.com/">&nbsp;</a></li><li><i></i><a href="http://www.pythonforbeginners.com/category/code-snippets-source-code/" title="View all posts in Code snippets">Code snippets</a></li><li><i></i><span class="bc-current">Python Code: Celsius and Fahrenheit Converter</span></li></ol>
+	</nav>
+</div>
+
+
+
+
+<div id="main" class="row">
+
+	<div id="content" class="col8">
+
+		<nav class="singlenav cf">
+			<div class="older">« <a href="http://www.pythonforbeginners.com/code-snippets-source-code/script-average-score/" rel="prev">Python Code: Calculate the average score</a></div>
+			<div class="newer"><a href="http://www.pythonforbeginners.com/code-snippets-source-code/regular-expression-re-findall/" rel="next">Python Code : Get all the links from a website</a> »</div>
+		</nav>
+		
+		<div id="post-586" class="post-586 post type-post status-publish format-standard hentry category-code-snippets-source-code tag-code-snippets tag-scripts cf">
+
+			<h1>
+				<a href="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/Python Code  Celsius and Fahrenheit Converter. Python Tutorials.htm" title="Python Code: Celsius and Fahrenheit Converter" rel="bookmark"><span class="firstpart">Python Code: Celsius </span> and Fahrenheit Converter </a>
+				
+			</h1>
+
+			<div class="post-footer">
+				22 Sep 2012 &nbsp;&nbsp;| <a href="http://www.pythonforbeginners.com/category/code-snippets-source-code/">Code snippets</a>
+				<p class="post-tags"><i></i>Tags: <a href="http://www.pythonforbeginners.com/tag/code-snippets/" rel="tag">Code Snippets</a> · <a href="http://www.pythonforbeginners.com/tag/scripts/" rel="tag">scripts</a></p>
+			</div>
+
+			<div class="post-bodycopy cf">
+				<h2>Overview</h2>
+<pre>This script converts temperature between Fahrenheit to Celsius. 
+
+To create a python converter for celsius and fahrenheit, you first have to find
+out which formula to use.
+</pre>
+<pre>Fahrenheit to Celsius formula:
+
+(°F - 32) x 5/9 = °C or in plain english, First subtract 32, then multiply by 5,
+then divide by 9.
+</pre>
+<pre>Celsius to Fahrenheit formula:
+
+(°C × 9/5) + 32 = °F or in plain English, Multiple by 9, then divide by 5, then
+add 32.
+</pre>
+<pre>Convert Fahrenheit to Celsius
+</pre>
+<div><div id="highlighter_273024" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python comments">#!/usr/bin/env python</code></div><div class="line number2 index1 alt1"><code class="python plain">Fahrenheit </code><code class="python keyword">=</code> <code class="python functions">int</code><code class="python plain">(</code><code class="python functions">raw_input</code><code class="python plain">(</code><code class="python string">"Enter a temperature in Fahrenheit: "</code><code class="python plain">))</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="python plain">Celsius </code><code class="python keyword">=</code> <code class="python plain">(Fahrenheit </code><code class="python keyword">-</code> <code class="python value">32</code><code class="python plain">) </code><code class="python keyword">*</code> <code class="python value">5.0</code><code class="python keyword">/</code><code class="python value">9.0</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="python functions">print</code> <code class="python string">"Temperature:"</code><code class="python plain">, Fahrenheit, </code><code class="python string">"Fahrenheit = "</code><code class="python plain">, Celsius, </code><code class="python string">" C"</code></div></div></td></tr></tbody></table></div></div>
+<pre>Convert Celsius to Fahrenheit
+</pre>
+<div><div id="highlighter_988645" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python comments">#!/usr/bin/env python</code></div><div class="line number2 index1 alt1"><code class="python plain">Celsius </code><code class="python keyword">=</code> <code class="python functions">int</code><code class="python plain">(</code><code class="python functions">raw_input</code><code class="python plain">(</code><code class="python string">"Enter a temperature in Celsius: "</code><code class="python plain">))</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="python plain">Fahrenheit </code><code class="python keyword">=</code> <code class="python value">9.0</code><code class="python keyword">/</code><code class="python value">5.0</code> <code class="python keyword">*</code> <code class="python plain">Celsius </code><code class="python keyword">+</code> <code class="python value">32</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="python functions">print</code> <code class="python string">"Temperature:"</code><code class="python plain">, Celsius, </code><code class="python string">"Celsius = "</code><code class="python plain">, Fahrenheit, </code><code class="python string">" F"</code></div></div></td></tr></tbody></table></div></div>
+<pre>Read and understand the script. Happy scripting!
+</pre>
+
+				<div class="mr_social_sharing_wrapper">
+				<!-- Social Sharing Toolkit v2.1.2 | http://www.active-bits.nl/support/social-sharing-toolkit/ --><span class="mr_social_sharing"><a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F&title=Python+Code%3A+Celsius+and+Fahrenheit+Converter" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://del.icio.us&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/delicious.png" class="nopin" alt="Save on Delicious" title="Save on Delicious"></a></span><span class="mr_social_sharing"><a href="https://plusone.google.com/_/+1/confirm?hl=en&url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F&title=Python+Code%3A+Celsius+and+Fahrenheit+Converter" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://plusone.google.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/googleplus.png" class="nopin" alt="+1" title="+1"></a></span><span class="mr_social_sharing"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F&media=&description=Python+Code%3A+Celsius+and+Fahrenheit+Converter" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://pinterest.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/pinterest.png" class="nopin" alt="Pin it on Pinterest" title="Pin it on Pinterest"></a></span><span class="mr_social_sharing"><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://www.reddit.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/reddit.png" class="nopin" alt="Submit to reddit" title="Submit to reddit"></a></span><span class="mr_social_sharing"><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://www.stumbleupon.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/stumbleupon.png" class="nopin" alt="Submit to StumbleUpon" title="Submit to StumbleUpon"></a></span><span class="mr_social_sharing"><a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F&name=Python+Code%3A+Celsius+and+Fahrenheit+Converter" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://www.tumblr.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/tumblr.png" class="nopin" alt="Share on Tumblr" title="Share on Tumblr"></a></span><span class="mr_social_sharing"><a href="https://twitter.com/share?url=http%3A%2F%2Fwww.pythonforbeginners.com%2Fcode-snippets-source-code%2Fpython-code-celsius-and-fahrenheit-converter%2F&text=Python+Code%3A+Celsius+and+Fahrenheit+Converter" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-article&#39;,&#39;http://twitter.com&#39;]);" class="mr_social_sharing_popup_link"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/twitter.png" class="nopin" alt="Share on Twitter" title="Share on Twitter"></a></span></div>
+				
+			</div>
+
+			
+			
+
+
+		</div>
+
+		
+<div id="disqus_thread"><iframe id="dsq2" data-disqus-uid="2" allowtransparency="true" frameborder="0" role="complementary" width="100%" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/saved_resource.htm" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 485px !important;" scrolling="no" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var disqus_url = 'http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/';
+    var disqus_identifier = '586 http://www.pythonforbeginners.com/?p=586';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'pythonbeginners';
+    var disqus_title = "Python Code: Celsius and Fahrenheit Converter";
+        var disqus_config = function () {
+        var config = this; // Access to the config object
+        config.language = '';
+
+        /*
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                config.callbacks.onReady.push(function() {
+            // sync comments in the background so we don't block the page
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = '?cf_action=sync_comments&post_id=586';
+
+            var firstScript = document.getElementsByTagName( "script" )[0];
+            firstScript.parentNode.insertBefore(script, firstScript);
+        });
+                    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+        ],
+        'trackback_url': "http:\/\/www.pythonforbeginners.com\/code-snippets-source-code\/python-code-celsius-and-fahrenheit-converter\/trackback\/"    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/embed.js?pname=wordpress&pver=2.74';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+
+
+		<nav class="singlenav cf">
+			<div class="older">« <a href="http://www.pythonforbeginners.com/code-snippets-source-code/script-average-score/" rel="prev">Python Code: Calculate the average score</a></div>
+			<div class="newer"><a href="http://www.pythonforbeginners.com/code-snippets-source-code/regular-expression-re-findall/" rel="next">Python Code : Get all the links from a website</a> »</div>
+		</nav>
+		
+	</div>
+	
+	<div id="widgetarea-one" class="col4">
+		<aside id="search-2" class="widget widget_search cf"><h3><i></i><span><span class="firstpart">Sea</span>rch</span></h3><form method="get" class="searchform" action="http://www.pythonforbeginners.com/">
+	<input type="text" class="field" name="s" value="">
+	<input type="submit" class="submit" name="submit" value="">
+</form>
+</aside><aside id="text-11" class="widget widget_text cf">			<div class="textwidget"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-6211089469258661";
+/* new_ad_pfb */
+google_ad_slot = "7115070680";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="280" height="233.33333333333334" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></div>
+		</aside><aside id="tlb_widget-2" class="widget tlb_widget cf"><h3><i></i><span><span class="firstpart">Follow us </span> on Twitter </span></h3>		<style type="text/css">
+			 #tlb_container {
+				 box-sizing: border-box;
+			 }
+			 #tlb_container * {
+				box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+			}
+			#tlb_container {
+				border:1px solid #AAA;
+				background:transparent; 
+				border-top-color:#315C99;
+				padding:5px 5px 0 5px; 
+				font-family:'Lucida grande',tahoma,verdana,arial,sans-serif;
+				
+			}
+			#tlb_header {
+				color:#555;
+				border-bottom:1px solid #D8DFEA;
+				color:#555; 
+				height:60px; 
+				position:relative;
+			}
+			#tlb_profile_img{
+				position:absolute;
+				top:5px;
+				left:5px;
+			}
+			#tlb_name{
+				position:absolute;
+				top:5px;
+				left:59px;
+				font-size:14px;
+				line-height:14px;
+				font-weight:bold;
+			}
+			#tlb_name a{
+				color:#3B5998;
+			}
+			#tlb_name a span{
+				font-weight:normal;
+				font-size:10px;
+			}
+			#tlb_follow{
+				position:absolute;
+				top:30px;
+				left:59px;
+			}
+			#tlb_follow_total{
+				padding:5px 5px 0px 5px;
+				font-size:11px;
+			}
+			.tlb_user_item{
+				line-height:1;
+				padding:5px 0px 3px 5px;
+				width:48px;
+				float:left;
+				text-align: center;
+			}
+			.tlb_user_item a{
+				color:gray;
+			}
+			.tlb_user_item span{
+				font-family:Arial;
+				font-size:10px;
+			}
+			#tlb_container {
+	
+}
+#tlb_header {
+
+}
+#tlb_profile_img{
+
+}
+#tlb_name{
+
+}
+#tlb_name a{
+	
+}
+#tlb_name a span{
+
+}
+#tlb_follow{
+
+}
+#tlb_follow_total{
+
+}
+.tlb_user_item{
+
+}
+.tlb_user_item a{
+
+}
+.tlb_user_item span{
+
+}
+		</style>
+
+		<div id="tlb_container" style="width: 100%">
+				
+				<div id="tlb_header">
+					<div id="tlb_profile_img">
+						<a target="_blank" href="http://twitter.com/pythonbeginners">
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/07c907f8667746b6e6cda382430ae668_normal.png" width="44" height="44" alt="pythonbeginners">
+						</a>
+					</div>
+					<div id="tlb_name">
+						<a target="_blank" href="http://twitter.com/pythonbeginners">
+							pythonbeginners<span> on Twitter</span>
+						</a>
+					</div>
+					<div id="tlb_follow">
+						<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/follow_button.1382126667.htm" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 65px; height: 20px;"></iframe>
+					</div>
+				</div>
+			<div style="padding:0;">
+				<div id="tlb_follow_total">
+					738 people follow <strong>pythonbeginners</strong>	
+				</div>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/agogodavid" title="agogodavid" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/29c951d2f2cb007210700e4f2e9918f1_normal.jpeg" width="48" height="48" alt="agogodavid">
+							<span>agogodav</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/linusable" title="linusable" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/default_profile_6_normal.png" width="48" height="48" alt="linusable">
+							<span>linusabl</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/adwibowo" title="adwibowo" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/d195ba3905b0c92a8d05def88263dc83_normal.jpeg" width="48" height="48" alt="adwibowo">
+							<span>adwibowo</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/ewokru" title="ewokru" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/ewok_q_normal.gif" width="48" height="48" alt="ewokru">
+							<span>ewokru</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/n3uplas" title="n3uplas" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/kolesar_normal.jpg" width="48" height="48" alt="n3uplas">
+							<span>n3uplas</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/AKSHAYPRATAP007" title="AKSHAYPRATAP007" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/c4ddb1ea627de6cd865d4420161c1753_normal.jpeg" width="48" height="48" alt="AKSHAYPRATAP007">
+							<span>AKSHAYPR</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Robotrix2" title="Robotrix2" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/default_profile_3_normal.png" width="48" height="48" alt="Robotrix2">
+							<span>Robotrix</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/siyafrica" title="siyafrica" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/e39496220e3ce0bd8bf04af7656f240f_normal.jpeg" width="48" height="48" alt="siyafrica">
+							<span>siyafric</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/K_Gorter" title="K_Gorter" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/default_profile_3_normal.png" width="48" height="48" alt="K_Gorter">
+							<span>K_Gorter</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/bitormetal" title="bitormetal" rel="nofollow">
+						
+							<img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/8a0bbae61789cd684e0d57a65d161752_normal.jpeg" width="48" height="48" alt="bitormetal">
+							<span>bitormet</span>
+							
+						</a>
+							
+					</span>
+							<br style="clear:both">
+			</div>
+	
+							</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+	</aside><aside id="text-7" class="widget widget_text cf">			<div class="textwidget"><div id="influads_block" class="influads_block"><div id="bsap_749" class="bsap" data-serve="CAAIC" data-segment-network="influads" data-css="yes" data-segment-placement="pythonforbeginnerscom"><style type="text/css" id="_influads_css">
+.influads_img { border:0 !important; text-align:center !important;} 
+.influads_text, .influads_text_a, .influads_text_a:visited { text-decoration: none; font-family:"Georgia" !important; font-size: 12px !important; text-align: center !important; line-height: 150% !important; color:#1F1F1F !important; padding-top: 5px !important;} 
+.influads_text_a:hover { color:#1F4F1F !important; text-decoration: none; } 
+.influads_block { width: 180px !important; overflow: hidden !important; text-align: center !important;} .influads_powered_div { padding: 5px 0 5px 0 !important; text-align: center !important;} 
+.influads_powered_link { font-family:"Arial" !important; font-size:9px !important; text-decoration:none  !important; color:green !important;}
+</style><a rel="nofollow" class="influads_link_img" href="http://srv.buysellads.com/ads/click/x/GTND4K7YCVYIL23MCKSLYKQIFT7D45QLCVBIPZ3JCKAD6KQ7C6SDK53KC67IEKJJF6BDEK3EHJNCLSIZ?segment=network:influads;placement:pythonforbeginnerscom" target="_blank">
+		<img class="influads_img" alt="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/5515" width="130" height="100">
+	</a>
+	<div class="influads_text">
+		<a rel="nofollow" class="influads_text_a" href="http://srv.buysellads.com/ads/click/x/GTND4K7YCVYIL23MCKSLYKQIFT7D45QLCVBIPZ3JCKAD6KQ7C6SDK53KC67IEKJJF6BDEK3EHJNCLSIZ?segment=network:influads;placement:pythonforbeginnerscom" target="_blank">Quality only Ad Network. Simple...</a>
+	</div><div class="influads_powered_div">
+		<a class="influads_powered_link" href="http://influads.com/?segment=network:influads;placement:pythonforbeginnerscom">Powered by InfluAds</a>
+	</div>
+
+<script type="text/javascript" id="auto_1" class="ignoreme">
+document.getElementById('bsap_749').getAttribute('data-css') == 'no' ? document.getElementById('_influads_css').innerHTML = '' : '';
+</script></div><div id="bsap_749" class="bsap" data-serve="CAAIC" data-segment-network="influads" data-css="yes" data-segment-placement="pythonforbeginnerscom"></div></div><script type="text/javascript">(function(){var acc='acc_1033d759_pub';var st='css';var or='s';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script></div>
+		</aside><aside id="categories-2" class="widget widget_categories cf"><h3><i></i><span><span class="firstpart">Categ</span>ories</span></h3>		<ul>
+	<li class="cat-basics"><i></i><a href="http://www.pythonforbeginners.com/category/basics/">Basics</a>
+</li>
+	<li class="cat-cheatsheet"><i></i><a href="http://www.pythonforbeginners.com/category/cheatsheet/">Cheatsheet</a>
+</li>
+	<li class="cat-code-snippets-source-code"><i></i><a href="http://www.pythonforbeginners.com/category/code-snippets-source-code/">Code snippets</a>
+</li>
+	<li class="cat-development"><i></i><a href="http://www.pythonforbeginners.com/category/development/">Development</a>
+</li>
+	<li class="cat-dictionary-data-structure-in-python"><i></i><a href="http://www.pythonforbeginners.com/category/dictionary-data-structure-in-python/">Dictionary</a>
+</li>
+	<li class="cat-error-handling"><i></i><a href="http://www.pythonforbeginners.com/category/error-handling/">Error Handling</a>
+</li>
+	<li class="cat-lists"><i></i><a href="http://www.pythonforbeginners.com/category/lists/">Lists</a>
+</li>
+	<li class="cat-loops"><i></i><a href="http://www.pythonforbeginners.com/category/loops/">Loops</a>
+</li>
+	<li class="cat-modules-in-python"><i></i><a href="http://www.pythonforbeginners.com/category/modules-in-python/">Modules</a>
+</li>
+	<li class="cat-python-strings"><i></i><a href="http://www.pythonforbeginners.com/category/python-strings/">Strings</a>
+</li>
+	<li class="cat-systems-programming"><i></i><a href="http://www.pythonforbeginners.com/category/systems-programming/">System &amp; OS</a>
+</li>
+	<li class="cat-python-on-the-web"><i></i><a href="http://www.pythonforbeginners.com/category/python-on-the-web/">Web &amp; Internet</a>
+</li>
+		</ul>
+</aside><aside id="simplyrelatedposts-2" class="widget SimplyRelatedPosts cf"><h3><i></i><span><span class="firstpart">Related </span> Posts </span></h3>               <ul>                         <li><i></i>
+                              <a class="related-post" href="http://www.pythonforbeginners.com/code-snippets-source-code/how-to-use-ftp-in-python/">
+                                   How to use FTP in Python                              </a>
+                         </li>                         <li><i></i>
+                              <a class="related-post" href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-snippets-2/">
+                                   Python Code Snippets                              </a>
+                         </li>                         <li><i></i>
+                              <a class="related-post" href="http://www.pythonforbeginners.com/code-snippets-source-code/port-scanner-in-python/">
+                                   Port scanner in Python                              </a>
+                         </li>                         <li><i></i>
+                              <a class="related-post" href="http://www.pythonforbeginners.com/code-snippets-source-code/bitly-shortener-with-python/">
+                                   Bitly Shortener with Python                              </a>
+                         </li>                         <li><i></i>
+                              <a class="related-post" href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-snippets-updated/">
+                                   Python Code Snippets (Updated)                              </a>
+                         </li>               </ul></aside><aside id="text-6" class="widget widget_text cf">			<div class="textwidget"><div id="influads_block" class="influads_block"></div><script type="text/javascript">(function(){var acc='acc_1033d759_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script></div>
+		</aside>
+	</div>
+	
+</div>
+<div class="row">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6211089469258661";
+/* python_beginners */
+google_ad_slot = "1824249082";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<div id="footer-bg">
+	<div id="footer" class="lw">
+	
+		<p>© 2013 Python For Beginners — All Rights Reserved.</p>
+				
+		<!-- 
+		<p>47 queries in 0.062  seconds.</p>
+		-->	
+		
+	</div>
+	
+
+</div>
+	
+	<script type="text/javascript">
+  SyntaxHighlighter.autoloader(
+      'applescript            http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushAppleScript.js',
+      'actionscript3 as3      http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushAS3.js',
+      'bash shell             http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushBash.js',
+      'coldfusion cf          http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushColdFusion.js',
+      'cpp c                  http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushCpp.js',
+      'c# c-sharp csharp      http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushCSharp.js',
+      'css                    http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushCss.js',
+      'delphi pascal          http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushDelphi.js',
+      'diff patch pas         http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushDiff.js',
+      'erl erlang             http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushErlang.js',
+      'groovy                 http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushGroovy.js',
+      'java                   http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushJava.js',
+      'jfx javafx             http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushJavaFX.js',
+      'js jscript javascript  http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushJScript.js',
+      'objc obj-c             http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushObjectiveC.js',
+      'perl pl                http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushPerl.js',
+      'php                    http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushPhp.js',
+      'text plain             http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushPlain.js',
+      'py python              http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushPython.js',
+      'ruby rails ror rb      http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushRuby.js',
+      'sass scss              http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushSass.js',
+      'scala                  http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushScala.js',
+      'sql                    http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushSql.js',
+      'vb vbnet               http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushVb.js',
+      'xml xhtml xslt html    http://www.pythonforbeginners.com/wp-content/plugins/syntax-highlighter-mt/scripts/shBrushXml.js'
+       );
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">quicktags({ id: 'comment-form', buttons: 'strong,em,link,block,code,close' });</script>
+		<div id="un-thankyou" style="display: none;">
+	<h2>Thank you</h2>
+	<p>
+		Your feedback has been received.	</p>
+	<a href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/#" id="un-feedback-close"><img src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/ok.png" id="thankyou-image" alt="Close"></a>
+</div>
+<script type="text/javascript" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/script_2.1.2.js"></script>
+  
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.optimizer.io/piwik/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "2"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+<script type="text/javascript">var RumID = 1052;</script><script type="text/javascript" async="" src="./Python Code  Celsius and Fahrenheit Converter. Python Tutorials_files/embed(1).js"></script>
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-1.newrelic.com","e8735a2ad6","1744682","MwNSNkRSCEBXWxFfXApJcQFCWgldGVELUlYc",0,63,new Date().getTime(),"","","","",""]);</script>
+
+<a href="http://www.pythonforbeginners.com/code-snippets-source-code/python-code-celsius-and-fahrenheit-converter/#" id="un-button" class="un-left css3" style="background-color: rgb(64, 64, 64); color: rgb(255, 255, 255); margin-top: 27px; left: -6px;">Feedback</a><div id="menu1-smooth"></div></body></html>

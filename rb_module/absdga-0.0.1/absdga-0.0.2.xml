@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><Project><name>absdga</name>
+<shortdesc>Gives the absolute value of a number</shortdesc>
+<description>absdga
+======
+
+Brief Description
+-----------------
+
+This is a introductory level project that teaches RubyLearning's 
+"An Introduction to Python" course students on how to uplaod their modules to Python Package Index.
+
+Usage
+-----
+
+import absdga
+
+print(absdga.absdga(-20))
+
+or
+
+from absdga import *
+
+print(absdga(-20))
+
+
+</description>
+<homepage rdf:resource="http://douglasallen.github.io/gh-pages/aboutme2/" />
+<maintainer><foaf:Person><foaf:name>rubylearning_student_dga</foaf:name>
+<foaf:mbox_sha1sum>6b92835ea211902c4b693d1b30b49bb058974349</foaf:mbox_sha1sum></foaf:Person></maintainer>
+<release><Version><revision>0.0.2</revision></Version></release>
+</Project></rdf:RDF>

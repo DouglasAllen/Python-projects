@@ -1,2 +1,0 @@
-fails:Method#inspect returns a String containing 'Method'
-fails:Method#inspect returns a String containing the Module the method is defined in

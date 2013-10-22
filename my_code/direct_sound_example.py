@@ -1,75 +1,80 @@
-#~ WAV_HEADER_SIZE = struct.calcsize('<4sl4s4slhhllhh4sl')
+# http://timgolden.me.uk/pywin32-docs/DirectSound_examples.html
+
+# http://docs.activestate.com/activepython/2.4/pywin32/DirectSound_examples.html
+
+WAV_HEADER_SIZE = struct.calcsize('<4sl4s4slhhllhh4sl')
+
+
+def wav_header_unpack(data):
+    '''Unpack a wav header and stuff it into a WAVEFORMATEX structure'''
+    (riff, riffsize, wave, fmt, fmtsize, format, nchannels, samplespersecond, 
+    datarate, blockalign, bitspersample, data, datalength) 
+    struct.unpack('<4sl4s4slhhllhh4sl', data)
+    if riff != 'RIFF' or fmtsize != 16 or fmt != 'fmt ' or data != 'data':
+      raise(ValueError, 'illegal wav header')
+    
+    wfx = pywintypes.WAVEFORMATEX()
+    wfx.wFormatTag = format
+    wfx.nChannels = nchannels
+    wfx.nSamplesPerSec = samplespersecond
+    wfx.nAvgBytesPerSec = datarate
+    wfx.nBlockAlign = blockalign
+    wfx.wBitsPerSample = bitspersample
+    return wfx, datalength
 
 
 
-#~ def wav_header_unpack(data):
-	#~ (riff, riffsize, wave, fmt, fmtsize, format, nchannels, samplespersecond,
-	#~ datarate, blockalign, bitspersample, data, datalength)
-	#~ struct.unpack('<4sl4s4slhhllhh4sl', data)
-	#~ if riff != 'RIFF' or fmtsize != 16 or fmt != 'fmt ' or data != 'data':
-		#~ raise ValueError, 'illegal wav header'
-		#~ wfx = pywintypes.WAVEFORMATEX()
-		#~ wfx.wFormatTag = format
-		#~ wfx.nChannels = nchannels
-		#~ wfx.nSamplesPerSec = samplespersecond
-		#~ wfx.nAvgBytesPerSec = datarate
-		#~ wfx.nBlockAlign = blockalign
-		#~ wfx.wBitsPerSample = bitspersample
-		#~ return wfx, datalength
+# Play a wav file and wait until it's finished
+
+fname = os.path.join(os.path.dirname(__file__), "01-Intro.wav")
+
+f = open(fname, 'rb')
 
 
 
-#~ # Play a wav file and wait until it's finished
+# Read and unpack the wav header
 
-#~ fname = os.path.join(os.path.dirname(__file__), "01-Intro.wav")
+hdr = f.read(WAV_HEADER_SIZE)
 
-#~ f = open(fname, 'rb')
-
-
-
-#~ # Read and unpack the wav header
-
-#~ hdr = f.read(WAV_HEADER_SIZE)
-
-#~ wfx, size = wav_header_unpack(hdr)
+wfx, size = wav_header_unpack(hdr)
 
 
 
-#~ d = ds.DirectSoundCreate(None, None)
+d = ds.DirectSoundCreate(None, None)
 
-#~ d.SetCooperativeLevel(None, ds.DSSCL_PRIORITY)
-
-
-
-#~ sdesc = ds.DSBUFFERDESC()
-
-#~ sdesc.dwFlags = ds.DSBCAPS_STICKYFOCUS | ds.DSBCAPS_CTRLPOSITIONNOTIFY
-
-#~ sdesc.dwBufferBytes = size
-
-#~ sdesc.lpwfxFormat = wfx
+d.SetCooperativeLevel(None, ds.DSSCL_PRIORITY)
 
 
 
-#~ buffer = d.CreateSoundBuffer(sdesc, None)
+sdesc = ds.DSBUFFERDESC()
+
+sdesc.dwFlags = ds.DSBCAPS_STICKYFOCUS | ds.DSBCAPS_CTRLPOSITIONNOTIFY
+
+sdesc.dwBufferBytes = size
+
+sdesc.lpwfxFormat = wfx
 
 
 
-#~ event = win32event.CreateEvent(None, 0, 0, None)
-#~ notify = buffer.QueryInterface(ds.IID_IDirectSoundNotify)
-
-#~ notify.SetNotificationPositions((ds.DSBPN_OFFSETSTOP, event))
+buffer = d.CreateSoundBuffer(sdesc, None)
 
 
 
-#~ buffer.Update(0, f.read(size))
+event = win32event.CreateEvent(None, 0, 0, None)
+notify = buffer.QueryInterface(ds.IID_IDirectSoundNotify)
 
-#~ buffer.Play(0)
-
-#~ win32event.WaitForSingleObject(event, -1)
+notify.SetNotificationPositions((ds.DSBPN_OFFSETSTOP, event))
 
 
-#This example shows how to record into a wav file:
+
+buffer.Update(0, f.read(size))
+
+buffer.Play(0)
+
+win32event.WaitForSingleObject(event, -1)
+
+
+#~ #This example shows how to record into a wav file:
 
 import pywintypes
 
@@ -82,17 +87,11 @@ import win32com.directsound.directsound as ds
 
 
 def wav_header_pack(wfx, datasize):
-
     return struct.pack('<4sl4s4slhhllhh4sl', 'RIFF', 36 + datasize,
-
-		       'WAVE', 'fmt ', 16,
-
-		       wfx.wFormatTag, wfx.nChannels, wfx.nSamplesPerSec,
-
-		       wfx.nAvgBytesPerSec, wfx.nBlockAlign,
-
-		       wfx.wBitsPerSample, 'data', datasize);
-
+                        'WAVE', 'fmt ', 16,
+                        wfx.wFormatTag, wfx.nChannels, wfx.nSamplesPerSec,
+                        wfx.nAvgBytesPerSec, wfx.nBlockAlign,
+                        wfx.wBitsPerSample, 'data', datasize);
 
 
 d = ds.DirectSoundCaptureCreate(None, None)

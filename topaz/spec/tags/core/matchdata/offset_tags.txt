@@ -1,1 +1,0 @@
-fails:MatchData#offset returns a two element array with the begin and end of the nth match

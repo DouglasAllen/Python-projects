@@ -1,0 +1,18 @@
+
+// or=130
+
+var pro = document.createElement('script');
+	pro.id = '_influads_projs';
+    pro.type = 'text/javascript';
+    pro.src = '//cdn.buysellads.com/ac/pro.js';
+    
+var install_unit = document.createElement('div');
+	install_unit.id = 'bsap_749';
+	install_unit.className = 'bsaPROrocks';
+	install_unit.setAttribute('data-serve', 'CAAIC');
+	install_unit.setAttribute('data-segment-network', 'influads');
+	install_unit.setAttribute('data-css', 'yes');
+	install_unit.setAttribute('data-segment-placement', 'pythonforbeginnerscom');
+
+document.getElementById('influads_block').appendChild(install_unit);
+document.getElementsByTagName('head')[0].appendChild(pro);

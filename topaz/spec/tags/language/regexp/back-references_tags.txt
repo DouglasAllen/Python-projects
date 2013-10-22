@@ -1,2 +1,0 @@
-fails:Regexps with back-references supports <n> (backreference to previous group match)
-fails:Regexps with back-references will not clobber capture variables across threads

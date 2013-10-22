@@ -1,0 +1,2086 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0081)http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Julian Date in Python - Dev Shed</title>
+
+<meta name="description" content="Julian Date in Python- Python Programming. Visit Dev Shed to discuss Julian Date in Python">
+<meta name="keywords" content="Python, Programming, Julian, Date, in, Python">
+
+
+<meta name="msvalidate.01" content="51D66E779B8BEF5ACEC1CD348C9D6B7F">
+
+<!--<base href="http://forums.devshed.com/">--><base href=".">
+
+<script type="text/javascript" async="" src="./Julian Date in Python - Dev Shed_files/ga.js"></script><script src="./Julian Date in Python - Dev Shed_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/unminified.js"></script>
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'New Dev Shed Style' (styleid: 7) */
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px;
+}
+a:link
+{
+	color: #000020;
+}
+a:visited
+{
+	color: #000020;
+}
+a:hover, a:active
+{
+	color: #FF4400;
+}
+.page
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #A4C0E2;
+}
+.tcat
+{
+	background-color: #CBCB9F;
+	color: #000000;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding:4px;
+}
+.tcat a:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #000000;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #E0E0C7;
+	color: #000000;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #333333;
+}
+.thead a:visited
+{
+	color: #333333;
+}
+.thead a:hover, .thead a:active
+{
+	color: #333333;
+}
+.tfoot
+{
+	background-color: #E0E0C7;
+	color: #000000;
+}
+.tfoot a:link
+{
+	color: #333333;
+}
+.tfoot a:visited
+{
+	color: #333333;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #333333;
+}
+.alt1, .alt1Active
+{
+	background-color: #EFEFEF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #F4F4F4;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+}
+.wysiwyg
+{
+	background-color: #F5F5FF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000033;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(http://images.devshed.com/fds/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D5D8E5 url(http://images.devshed.com/fds/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #22229C;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #738FBF;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #BBC7CE;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+
+
+
+A.network:link, A.network:visited, A.network:active { font-family: Verdana, Arial, Helvetica; font-size: 8pt; color: #000000; text-decoration: none;}
+  A.network:hover { color:#000000; text-decoration: underline;}
+.overlink {
+  	 cursor:pointer; 
+  	 cursor:hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: underline;
+        font-weight: bold;
+}
+.title, A.title:link, A.title:visited, A.title:active {
+	font-family:  "Trebuchet MS", "Impact", Helvetica,Arial, Verdana, sans-serif  ;
+	font-size: 40px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.title2, A.title2:link, A.title2:visited, A.title2:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+         vertical-align: top;
+}
+
+.smalltitle, A.smalltitle:link, A.smalltitle:visited, A.smalltitle:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+
+.art_title, A.art_title:link, A.art_title:visited, A.art_title:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	cursor:pointer; 
+	cursor:hand;
+}
+.showthreadh1
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin:0;
+  font-size: 14px;
+  font-weight: bold;	
+  display: inline;
+}
+.navbar2 {
+font-size: 11px;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.navbar3 {
+margin-top:7px;
+}
+
+.boxAds, a.boxAds:link, a.boxAds:visited, a.boxAds:active, a.boxAds:hover{ 
+      background-color: #000066; 
+      font-weight: bold; 
+      font-size: 8pt; 
+      color: #FFFFCC; 
+      text-decoration : underline;
+}
+
+.tightline  {line-height: .5}
+.top {
+	cursor:pointer; cursor:hand;
+	text-decoration: underline; color:#000000;
+	font-family: Verdana,Arial,Helvetica; 
+	font-size: 10px;
+}
+
+.search {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #333333;
+        text-decoration: none;
+}
+.search2 {
+        font-family: Geneva, Arial, Helvetica, san-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-decoration: none;
+}
+.search3 {
+        font-family: Geneva, Arial, Helvetica, san-serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+}
+
+.footlink, .footlink:link, .footlink:visited, .footlink:hover, .footlink:active {
+	text-decoration: underline;
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	cursor:pointer; 
+  	cursor:hand;
+}
+
+.foottxt {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+}
+
+.newlinks {
+cursor:pointer; cursor:hand;
+text-decoration: underline; color:blue;
+font-family: Verdana,Arial,Helvetica; 
+font-size: 10px;
+}
+
+.blacklinks, .blacklinks:link, .blacklinks:visited, .blacklinks:hover, .blacklinks:active {
+	cursor:hand;
+	text-decoration: underline;
+	color:#000000;
+	cursor:pointer; 
+  	cursor:hand;
+}
+.mainbckgrnd { 
+          background: url(http://images.devshed.com/fds/current/devshed.jpg);
+          background-repeat: no-repeat;
+background-attachment: 
+fixed
+background-position: 123px 153px;
+}
+.ads-ads {background:#ccc; background:rgba(0, 0, 0, .15); clear: both; }
+.ads-ads ul.ad-block-header {list-style:none;margin:0 0 0 0;padding:0;max-width:1140px; margin: 0 auto;}
+.ads-ads h2{text-align:center;font-weight:700; padding:10px 0;  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;}
+  .ads-ads h2 a{color:#0D6B93; }
+.ads-ads ul.ad-block-header img{max-width: 100%;}
+.ads-ads ul.ad-block-header li {float:left;width:20%;text-align:center; font-family: 'Droid Sans', Helvetica, Arial, sans-serif;}
+.ads-ads ul.ad-block-header li h5 {padding: 10px 5px;line-height: 1em;}
+  .ads-ads ul.ad-block-header li h5 a{color:#0D6B93;}
+.coming-soon-heading {font:normal normal 4em 'Exo', sans-serif; color: #0B9743; text-align: center; padding-top: 15px; border-top: 1px solid #333; border-top: 1px solid rgba(33,33,33,.50);  }
+-->
+</style>
+
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var IMGDIR_MISC = "http://images.devshed.com/fds/misc";
+// -->
+</script>
+
+
+
+<script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/vbulletin_global.js"></script>
+
+<script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/spellChecker.js"></script>
+<meta name="verify-v1" content="QnBv+OADLWvrKmdnMiRjmClE4zdJtP0Y+aLTEr//fII=">
+<meta name="google-site-verification" content="sx3gn-JfAwaPP3-Yor05syXm1iP95XALC-yAck9qI6g">
+<script charset="utf-8" type="text/javascript">
+  // Removed 876 from list because we are now hardcoding it to appear everytime.
+  var testArray = [862,863,864,865,867,868,869,870,871,872,873,875,947];
+  function Shuffle(o) {
+	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+  };
+  Shuffle(testArray);
+</script>
+
+<!-- Code to insert ads into the sidebar -->
+<script type="text/javascript" async="true">
+    $(document).ready(function() {
+        var ad3 = '<li><a onclick="switchUrl(\'http://services.seekdotnet.com/aff.php?aff=209\', event)" rel="nofollow" target="_blank" href="http://www.seekdotnet.com"><img src="http://images.devshed.com/ds/stories/Seekdotnet_125x125.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/seekdotnet-reviews-535858.html">SEEKDOTNET Reviews</a></h5></li>';
+        var ad4 = '<li><a onclick="switchUrl(\'http://www.amazon.com/b?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&node=229667&site-redirect=&tag=develshedinc-20\', event)" rel="nofollow" target="_blank" href="http://www.Amazon.com"><img src="http://images.devshed.com/ds/stories/Amazon.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/amazon-reviews-535859.html">Amazon Reviews</a></h5></li>';
+        var ad5 = '<li><a onclick="switchUrl(\'http://www.ironspeed.com/products/Registration.aspx?c=DevShed\', event)" rel="nofollow" target="_blank" href="http://www.IronSpeed.com"><img src="http://images.devshed.com/ds/stories/DevShed.2012.10.15.125x125-Oneliner-Banner-1.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/iron-speed-reviews-535860.html">Iron Speed Reviews</a></h5></li>';
+        var ad6 = '<li><a onclick="switchUrl(\'http://www.tkqlhce.com/click-6233268-10458283\', event)" rel="nofollow" target="_blank" href="http://www.wrox.com"><img src="http://images.devshed.com/ds/stories/Wiley.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/wiley-books-reviews-535861.html">Wiley Books Reviews</a></h5></li>';
+        var ad7 = '<li><a onclick="switchUrl(\'http://click.linksynergy.com/fs-bin/click?id=pDiyWjC1oVc&offerid=145244.10000124&subid=0&type=4\', event)" rel="nofollow" target="_blank" href="http://www.peachpit.com"><img src="http://images.devshed.com/ds/stories/PeachPit_NewImage2013_2.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/pearson-peach-pit-press-reviews-535863.html">Pearson Peach Pit Reviews</a></h5></li>';
+        var ad8 = '<li><a onclick="switchUrl(\'http://click.linksynergy.com/fs-bin/click?id=pDiyWjC1oVc&offerid=234822.10000003&type=4&subid=0\', event)" rel="nofollow" target="_blank" href="http://www.tigerdirect.com"><IMG border=0 alt="Hpage_125x125" src="http://images.devshed.com/ds/stories/TigerDirect.gif"></a><h5><a href="http://forums.aspfree.com/guide-77/tiger-direct-reviews-535864.html">Tiger Direct Reviews</a></h5><IMG border=0 width=1 height=1 alt=button src="http://ad.linksynergy.com/fs-bin/show?id=pDiyWjC1oVc&bids=234822.10000003&type=4&subid=0"></li>';
+        var ad9 = '<li><a onclick="switchUrl(\'http://www.jdoqocy.com/click-6233268-10706050\', event)" rel="nofollow" target="_blank" href="http://www.register.com"><img src="http://images.devshed.com/ds/stories/Register.com.gif" alt="Domain And Email Banner" border="0"/></a><h5><a href="http://forums.aspfree.com/guide-77/register-com-reviews-535865.html">Register.com Reviews</a></h5></li>';
+        var ad10 = '<li><a onclick="switchUrl(\'http://www.dpbolvw.net/click-6233268-10685979\', event)" rel="nofollow" target="_blank" href="http://www.adobe.com"><img src="http://images.devshed.com/ds/stories/Adobe.jpg" border="0" /></a><h5><a href="http://forums.aspfree.com/guide-77/adobe-reviews-535866.html">Adobe Reviews</a></h5></li>';
+        var ad11 = '<li><a onclick="switchUrl(\'http://www.kqzyfj.com/click-6233268-11114982\', event)" rel="nofollow" target="_blank" href="http://www.autodesk.com"><img src="http://images.devshed.com/ds/stories/AutoDesk.jpg" border="0" /></a><h5><a href="http://forums.aspfree.com/guide-77/autodesk-reviews-535867.html">AutoDesk Reviews</a></h5></li>';
+        var ad12 = '<li><a onclick="switchUrl(\'http://www.lynda.com/home/otl.aspx?utm_medium=affiliate&utm_source=ldc_affiliate&utm_content=35&utm_campaign=CD14616&bid=35&aid=CD14616&opt=\', event)" rel="nofollow" target="_blank" href="http://www.lynda.com"><img src="http://images.devshed.com/ds/stories/Lynda.com_Watch_Videos_Now.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/lynda-com-reviews-537462.html">lynda.com Reviews</a></h5></li>';
+        var ad13 = '<li><a onclick="switchUrl(\'http://www.dpbolvw.net/click-6233268-10654233\', event)" rel="nofollow" target="_blank" href="http://www.drivershq.com"><img src="http://images.devshed.com/ds/stories/DriverDetective.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/driver-detective-reviews-535869.html">Driver Detective Reviews</a></h5></li>';
+        var ad14 = '<li><a onclick="switchUrl(\'http://www.kqzyfj.com/click-6233268-10459963\', event)" rel="nofollow" target="_blank" href="http://www.dreamtemplate.com"><img src="http://images.devshed.com/ds/stories/DTemplates_New.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/dream-templates-reviews-535870.html">Dream Template Reviews</a></h5></li>';
+        var ad15 = '<li><a onclick="switchUrl(\'http://www.kqzyfj.com/click-6233268-10575701\', event)" rel="nofollow" target="_blank" href="http://www.kaspersky.com"><img src="http://images.devshed.com/ds/stories/Kaspersky.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/kaspersky-labs-reviews-535871.html">Kaspersky Labs Reviews</a></h5></li>';
+        var ad16 = '<li><a onclick="switchUrl(\'http://www.tkqlhce.com/click-6233268-11099501\', event)" rel="nofollow" target="_blank" href="http://www.logmein.com"><img src="http://images.devshed.com/ds/stories/Logmein.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/logmein-535872.html">LogMeIn Reviews</a></h5></li>';
+        var ad17 = '<li><a onclick="switchUrl(\'http://www.kqzyfj.com/click-6233268-10441371\', event)" rel="nofollow" target="_blank" href="http://www.trendmicro.com"><img src="http://images.devshed.com/ds/stories/TrendMicro_2.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/trend-micro-reviews-537052.html">Trend Micro Reviews</a></h5></li>';
+        var ad18 = '<li><a onclick="switchUrl(\'http://www.dpbolvw.net/click-6233268-11014883\', event)" rel="nofollow" target="_blank" href="http://www.pandasecurity.com"><img src="http://images.devshed.com/ds/stories/PandaCloud_1-10-2013.gif" alt="Cloud Office Protection" border="0"/></a><h5><a  href="http://forums.aspfree.com/guide-77/panda-security-reviews-535874.html">Panda Security Reviews</a></h5></li>';
+        var ad21 = '<li><a onclick="switchUrl(\'http://send.onenetworkdirect.net/z/327515/CD174619\', event)" rel="nofollow" target="_blank" href="http://www.driverhive.com"><img src="http://images.devshed.com/ds/stories/DriverHive_125x125.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/driverhive-reviews-537491.html">DriverHive Reviews</a></h5></li>';
+        var ad22 = '<li><a onclick="switchUrl(\'http://www.dpbolvw.net/click-6233268-10950928\', event)" rel="nofollow" target="_blank" href="http://www.clickatell.com"><img src="http://images.devshed.com/ds/stories/Clickatell_New.jpg" alt="" border="0"/></a><h5><a  href="http://forums.aspfree.com/guide-77/clickatell-reviews-535878.html">Clickatell Reviews</a></h5></li>';
+        var ad23 = '<li><a onclick="switchUrl(\'http://www.tkqlhce.com/click-6233268-10430939\', event)" rel="nofollow" target="_blank" href="http://www.mozy.com"><img src="http://images.devshed.com/ds/stories/Mozy.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/mozy-reviews-535879.html">Mozy Reviews</a></h5></li>';
+        var ad24 = '<li><a onclick="switchUrl(\'http://www.kqzyfj.com/click-6233268-10648897\', event)" rel="nofollow" target="_blank" href="http://www.avg.com"><img src="http://images.devshed.com/ds/stories/AVG_New.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/avg-technologies-reviews-535880.html">AVG Reviews</a></h5></li>';
+        var ad25 = '<li><a onclick="switchUrl(\'http://www.anrdoezrs.net/click-6233268-10778007\', event)" rel="nofollow" target="_blank" href="http://www.Elance.com"><img src="http://images.devshed.com/ds/stories/Elance.gif" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/elance-reviews-537523.html">Elance Reviews</a></h5></li>';
+        var ad27 = '<li><a onclick="switchUrl(\'http://send.onenetworkdirect.net/z/345819/CD174619/\', event)" rel="nofollow" target="_blank" href="http://www.microsoftstore.com"><img src="http://images.devshed.com/ds/stories/Microsoft_Store.jpg" border="0" /></a><h5><a  href="http://forums.aspfree.com/guide-77/microsoft-store-reviews-535950.html">Microsoft Store Reviews</a></h5></li>';
+        var ad28 = '<a onclick="switchUrl(\'https://www.majesticseo.com/\', event)" rel="nofollow" target="_blank" href="http://www.majesticseo.com"><img src="http://images.devshed.com/ds/stories/majesticseo.png" alt="Majesticseo"/></a><h5><a href="http://forums.seochat.com/guide-90/majesticseo-reviews-465418.html">MajesticSEO Reviews</a></h5>';
+    	var adArray = new Array(ad3, ad4, ad5, ad6, ad7, ad8, ad9, ad10, ad11, ad12, ad13, ad14, ad15, ad16, ad17, ad18, ad21, ad22, ad23, ad24, ad25, ad27);
+    	var adUrls = new Array();
+ 
+        Shuffle(adArray);
+        adUrls.push(ad28);
+        for (var i = 0; i < adArray.length; i++) {
+              if (i <= 3) {
+                adUrls.push(adArray[i]);
+              }
+         }
+
+        $.ajax({
+        	url: "ajax-get-ads.php",
+        	dataType: "html",
+        	type: "POST",
+        	data: { 'adurls' : adUrls },
+			timeout: 60000, // 1000 = 1 sec
+			success: function(data) {
+				$('#ads-wrap').html(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ": " + errorThrown);
+                console.log(jqXHR);
+            }
+		});
+	});
+
+</script>
+<!-- END: Code to insert ads into the sidebar -->
+
+
+<link href="./Julian Date in Python - Dev Shed_files/styles.css" rel="stylesheet" type="text/css">
+<link rel="SHORTCUT ICON" href="http://forums.devshed.com/images/favicon2.ico">
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-290307-1']);
+  _gaq.push(['_setDomainName', '.devshed.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body link="#000000" vlink="#000000" alink="#000000" leftmargin="0" topmargin="0">
+<a name="top"></a>
+<div align="center">
+<table width="98%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#FFFFFF">
+  <table width="730" border="0" align="right" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td width="20"><img src="./Julian Date in Python - Dev Shed_files/devshed-01.jpg" width="20" height="21"></td>
+      <td width="35" bgcolor="#406c47">&nbsp;</td>
+      <td width="675" valign="middle" bgcolor="#406c47"><center><style type="text/css">
+<!--
+#topnavbox {	
+	clear: both;
+	text-align:center;
+	font-size: 0.8em;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.topnavtxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: normal;
+    padding: 0;
+    margin: 0;
+color: #ffffff;\n}
+
+-->
+</style>
+<div id="topnavbox" align="center">
+	<div class="topnavtxt">
+<script type="text/javascript" language="JavaScript">
+<!--
+function ttgo1(url)
+{
+	if (url.length > 1)
+	{
+		document.location.href = "http://" + url + "/";
+	}
+}
+
+function ttfstart1(name)
+{
+	document.write('<div style="display: inline; top: 0; padding:0; border: 0px;"><B>' + name + '</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);">');
+	document.write('<option value="" selected> - Select - </option>');	
+}
+
+function ttfend1()
+{
+	document.write('</select></form></div>');
+}
+
+function ttfadd1(name, val)
+{
+	document.write('<option value="' + val + '">' + name + '</option>');
+}
+
+function ttspace1()
+{
+	document.write('&nbsp;&nbsp;&nbsp;');
+}
+
+ttfstart1('Tutorials:');
+ttfadd1('Dev Shed', 'www.devshed.com');
+ttfadd1('ASP Free', 'www.aspfree.com');
+ttfadd1('Dev Articles', 'www.devarticles.com');
+ttfadd1('Dev Hardware', 'www.devhardware.com');
+ttfadd1('SEO Chat', 'www.seochat.com');
+ttfadd1('Web Hosting', 'webhosting.devshed.com');
+ttfadd1('Codewalkers', 'www.codewalkers.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Resources:');
+ttfadd1('Scripts', 'www.scripts.com');
+ttfadd1('Tutorialized', 'www.tutorialized.com');
+ttfadd1('Dev Mechanic', 'tools.devshed.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Forums:');
+ttfadd1('Dev Shed Forums', 'forums.devshed.com');
+ttfadd1('ASP Free Forums', 'forums.aspfree.com');
+ttfadd1('Dev Articles Forums', 'forums.devarticles.com');
+ttfadd1('Dev Hardware Forums', 'www.devhardware.com/forums');
+ttfadd1('SEO Chat Forums', 'forums.seochat.com');
+ttfadd1('Codewalkers Forums', 'forums.codewalkers.com');
+ttfadd1('Tutorialized Forums', 'forums.tutorialized.com');
+ttfend1();
+//-->
+</script><div style="display: inline; top: 0; padding:0; border: 0px;"><b>Tutorials:</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onchange="javascript:ttgo(this.options[this.selectedIndex].value);"><option value="" selected=""> - Select - </option><option value="www.devshed.com">Dev Shed</option><option value="www.aspfree.com">ASP Free</option><option value="www.devarticles.com">Dev Articles</option><option value="www.devhardware.com">Dev Hardware</option><option value="www.seochat.com">SEO Chat</option><option value="webhosting.devshed.com">Web Hosting</option><option value="www.codewalkers.com">Codewalkers</option></select></form></div>&nbsp;&nbsp;&nbsp;<div style="display: inline; top: 0; padding:0; border: 0px;"><b>Resources:</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onchange="javascript:ttgo(this.options[this.selectedIndex].value);"><option value="" selected=""> - Select - </option><option value="www.scripts.com">Scripts</option><option value="www.tutorialized.com">Tutorialized</option><option value="tools.devshed.com">Dev Mechanic</option></select></form></div>&nbsp;&nbsp;&nbsp;<div style="display: inline; top: 0; padding:0; border: 0px;"><b>Forums:</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onchange="javascript:ttgo(this.options[this.selectedIndex].value);"><option value="" selected=""> - Select - </option><option value="forums.devshed.com">Dev Shed Forums</option><option value="forums.aspfree.com">ASP Free Forums</option><option value="forums.devarticles.com">Dev Articles Forums</option><option value="www.devhardware.com/forums">Dev Hardware Forums</option><option value="forums.seochat.com">SEO Chat Forums</option><option value="forums.codewalkers.com">Codewalkers Forums</option><option value="forums.tutorialized.com">Tutorialized Forums</option></select></form></div>
+	</div>
+</div>
+</center></td>
+    </tr>
+  </tbody></table>
+    </td>
+  </tr>
+  <tr align="center">
+    <td valign="top" class="mainbckgrnd" height="80">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr align="right"><td height="20" colspan="3"><table cellpadding="0" cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td></tr>
+        <tr align="left">
+          <td width="30" height="58"></td>
+          <td valign="middle" colspan="2" class="pagename">
+		    <table cellpadding="0" align="left">
+		      <tbody><tr>
+		        <td width="80" align="left"><a rel="nofollow" href="http://forums.devshed.com/" class="title" title="Dev Shed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td><td valign="top"><a rel="nofollow" href="http://forums.devshed.com/" class="title" title="Dev Shed"></a>
+<a rel="nofollow" href="http://forums.devshed.com/" class="smalltitle" title="Python Programming">Python Programming</a></td>
+
+        	  </tr>
+      		</tbody></table>
+          </td>
+         </tr>
+        <!-- <tr><td colspan=3>&nbsp;</td></tr> --> 
+      </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">
+     <table width="917" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td width="20"><img src="./Julian Date in Python - Dev Shed_files/devshed-02.jpg" width="20" height="29"></td>
+        <td width="1" bgcolor="#406c47">&nbsp;</td>  
+        <td width="901" bgcolor="#406c47"><table width="901" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr> 
+            <td class="txtwhite" valign="middle">
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/">Forums</a><span class="foottxt">: »</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/register.php?action=signup">Register</a><span class="foottxt">&nbsp;«&nbsp;|&nbsp;</span>
+<a class="footlink" rel="dofollow" href="http://seotools.devshed.com/">Free Tools</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/usercp.php">User CP</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/dev-shed-gaming-center-143/">Games</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/calendar.php">Calendar</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/memberlist.php">Members</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/forum-rules-guidelines-127/">FAQs</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/sitemap/">Sitemap</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<span class="footlink" onclick="window.location=&#39;http://www.developershed.com/esupport/&#39;">Support</span><span class="foottxt">&nbsp;|&nbsp;</span>
+<a rel="nofollow" href="http://forums.devshed.com/rss/"><img src="./Julian Date in Python - Dev Shed_files/forum-rss3.gif" width="24" height="21" border="0" vspace="0" align="absmiddle"></a>
+            </td>
+            <td><div align="right">
+<!-- TOP SEARCH BOX -->
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td height="26" align="right" style="float:right;width:240px;_width:240px;padding-right:3px;padding-top:3px;_padding-top:0px;_padding-right:3px;"><form style="display:inline;" action="http://forums.devshed.com/googlecse.php" id="cse-search-box"><input type="hidden" name="cx" value="partner-pub-5054715448040917:7689756459"><input type="hidden" name="cof" value="FORID:11"><input type="hidden" name="ie" value="ISO-8859-1"><input type="text" name="q" size="20" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;"> <input type="image" style="margin-top: -3px;_margin-top:2px;" align="absmiddle" src="./Julian Date in Python - Dev Shed_files/google_search.gif" height="20" width="56" name="sa" value="Search"><script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/brand"></script><input name="siteurl" type="hidden" value="forums.devshed.com/python-programming-11/julian-date-in-python-410345.html"><input name="ref" type="hidden" value="us.yhs4.search.yahoo.com/yhs/search?hspart=avg&amp;hsimp=yhs-fh_lsonsw&amp;type=dis_dn&amp;param1=rVLbitswEP0a681Gd0sPfkjiBAptWbYpfVxGFztbYq8rO6H79x2Zpt0WCktZMJoZ6WhG5xz7x9AUtbOslXujebnXrSzlRu_KTSvrUhrF7daa_cHuijqQ0DBRGymYoopSSsLchJEyRs4w9k0cyYD9XBBWWqsU10xy6kFE4Mx1UWmwktnSGekC-M5Kbl3dec3rqGNtnHe1NFQpAKkNV2TCbjN0sb9ACmRKWJC5byi5NkxVsqKVIrtLSnFc7qCPn-_fN6dlmQoBBe_wG57nCMmfKrj2lX8acGtC3IzxdjBP3wvR-QFHFSIUXH_DMD0vp6ex4M6fwV_OsETMv17Oj5A3x8vgYkLoDDgqnCZMM3_MI57rYW31ZipgR__zcarevsopBLZ47YqXbjphGWasV7tygblFID-odeWUCeSmsRAbYdaQZ7u7D4ieEsJnyJzHcOOM9B_AZwlohqxv_OVWPs-KUPIppmtM79rmuOXl8eOx_HLYU07uYxfRufQa07JD_yfB23vx0uk_FP2tUR6Z9SypLekqL2UG-Ym8rE3-cuZf2r34x34A0&amp;param2=browser_homepage&amp;param3=dis_dn&amp;p=python+claculate+julian+"><input name="ss" type="hidden" value=""><input name="siteurl" type="hidden" value="forums.devshed.com/python-programming-11/julian-date-in-python-410345.html"><input name="ref" type="hidden" value="us.yhs4.search.yahoo.com/yhs/search?hspart=avg&amp;hsimp=yhs-fh_lsonsw&amp;type=dis_dn&amp;param1=rVLbitswEP0a681Gd0sPfkjiBAptWbYpfVxGFztbYq8rO6H79x2Zpt0WCktZMJoZ6WhG5xz7x9AUtbOslXujebnXrSzlRu_KTSvrUhrF7daa_cHuijqQ0DBRGymYoopSSsLchJEyRs4w9k0cyYD9XBBWWqsU10xy6kFE4Mx1UWmwktnSGekC-M5Kbl3dec3rqGNtnHe1NFQpAKkNV2TCbjN0sb9ACmRKWJC5byi5NkxVsqKVIrtLSnFc7qCPn-_fN6dlmQoBBe_wG57nCMmfKrj2lX8acGtC3IzxdjBP3wvR-QFHFSIUXH_DMD0vp6ex4M6fwV_OsETMv17Oj5A3x8vgYkLoDDgqnCZMM3_MI57rYW31ZipgR__zcarevsopBLZ47YqXbjphGWasV7tygblFID-odeWUCeSmsRAbYdaQZ7u7D4ieEsJnyJzHcOOM9B_AZwlohqxv_OVWPs-KUPIppmtM79rmuOXl8eOx_HLYU07uYxfRufQa07JD_yfB23vx0uk_FP2tUR6Z9SypLekqL2UG-Ym8rE3-cuZf2r34x34A0&amp;param2=browser_homepage&amp;param3=dis_dn&amp;p=python+claculate+julian+"><input name="ss" type="hidden" value=""></form></td>
+    </tr>
+</tbody></table>
+</div></td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table></div>
+<!-- END :: TOP SEARCH BOX -->
+
+<!-- ZONE FOR TOP RIGHT HAND TEXT ON ALL PAGES -->
+<!-- END ZONE FOR TOP RIGHT HAND TEXT ON ALL PAGES -->
+<table align="center" width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr valign="top"> 
+    <td width="158" style="background-color:#CBCB9F;">
+	<div align="left">
+      <table width="136" border="0" cellspacing="0" cellpadding="3">
+<!-- Beginning of login -->
+
+        <form action="http://forums.devshed.com/login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)"></form>
+        <script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/vbulletin_md5.js"></script>
+          <tbody><tr>
+            <td height="15" class="form"><font color="#000000"><b>User Name:</b></font></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="form" name="vb_login_username" id="navbar_username" size="12" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == &#39;User Name&#39;) this.value = &#39;&#39;;"></td>
+          </tr>
+          <tr>
+            <td class="form"><font color="#000000"><b>Password:</b></font></td>
+          </tr>
+          <tr>
+            <td><input type="password" class="form" name="vb_login_password" size="12" accesskey="p" tabindex="2">
+              <input type="submit" class="form" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the &#39;register&#39; button to create a profile for yourself." accesskey="s"></td>
+          </tr>
+          <tr>
+            <td><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked"></label>
+              <span class="form"><font color="#000000"><b>Remember me</b></font></span></td>
+          </tr>
+        <input type="hidden" name="s" value="">
+        <input type="hidden" name="do" value="login">
+        <input type="hidden" name="forceredirect" value="1">
+        <input type="hidden" name="vb_login_md5password">
+        
+
+<!-- End of Login -->
+        </tbody></table>
+	</div>
+    </td>
+    <td align="center" height="100" style="background-color:#CBCB9F;">
+	<!-- ZONE FOR TOP BANNER AD -->
+	  <table width="100%" cellpadding="4" cellspacing="0">
+        <tbody><tr valign="middle"><td align="center" valign="middle"></td> </tr>
+    <!-- END ZONE FOR TOP BANNER AD -->
+	  </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+<!-- end of header template -->
+
+
+
+<!-- content table -->
+<table bgcolor="" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+  <td width="100%">
+
+
+<!-- Add Breadcrumb title -->
+<table cellspacing="0" cellpadding="0" width="98%" align="center"><tbody><tr><td>
+<table width="100%" cellpadding="6" cellspacing="1" class="tborder" border="0">
+<tbody><tr>
+	<td class="alt1" width="100%">
+		<table cellpadding="0" width="100%" cellspacing="0" border="0" align="left"><tbody><tr><td colspan="3"><br><b>New Free Tools on Dev Shed!</b><br>
+We're Excited to announce that Dev Shed now has 70 free tools on the site. To learn more, click <a style="font-weight:bold;color:blue;" target="_blank" href="http://forums.devshed.com/forum-announcements-120/new-free-tools-on-devshed-948222.html">here</a>!<br><br></td></tr>
+		<tr valign="bottom"><td>
+		
+				<a rel="nofollow" href="http://forums.devshed.com/#" onclick="history.back(1)"><img src="./Julian Date in Python - Dev Shed_files/navbits_start.gif" width="15" height="15" alt="Go Back" border="0" title="Go Back"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a rel="nofollow" href="http://forums.devshed.com/" accesskey="1">Dev Shed Forums</a> 
+	&gt;&nbsp;<a class="normalfont" href="http://forums.devshed.com/programming-languages-41/">Programming Languages</a>
+
+	&gt;&nbsp;<a class="normalfont" href="http://forums.devshed.com/python-programming-11/">Python Programming</a>
+</span></td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a rel="nofollow" href="./Julian Date in Python - Dev Shed_files/Julian Date in Python - Dev Shed.htm"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/navbits_finallink.gif" alt="Reload this Page" width="30" height="15" border="0" title="Reload this Page"></a> <h1 class="showthreadh1">
+	Julian Date in Python
+</h1>		
+
+		
+
+
+		
+
+
+
+
+
+
+
+<div id="intelliTxt" class="navbar2"><!--INFOLINKS_ON-->Discuss <b>Julian Date in Python</b> in the Python Programming forum on Dev Shed. <br><i>Julian Date in Python</i> Python Programming forum discussing coding techniques, tips and tricks, and Zope related information. Python was designed from the ground up to be a completely object-oriented programming language.<!--INFOLINKS_OFF--></div>
+
+
+
+
+<!-- end of check -->
+
+</td>
+</tr>
+</tbody></table>
+</td></tr></tbody></table>
+
+
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+td div#showcase {
+background:#e5e5e5;height:24px;text-align:center;font-weight:bold;margin:5px;padding-top:3px;
+}
+td div#showcase a,td div#showcase a:hover {
+    color:000;
+}    
+td div#showcasebody a {
+    text-align:center;
+    display:block;
+}
+td div#showcasebody a:hover {
+    color:000;
+}
+td div#showcasebody p{
+height:115px;
+overflow:hidden;
+padding:5px;
+}
+td div#showcasebody p img{
+float:left;
+display:block;
+padding:5px;
+}
+td div#showcasebody a.regular {
+display:inline !important;
+}
+td div#showcasebody a.first {
+display:inline !important;
+margin-left:50px;
+}
+#close-showcase {
+    background: #fff url(http://forums.devshed.com/images/accordion-open.png) no-repeat right top;
+    background-position:top right;
+    font-family:"Times New Roman","Times";
+    font-weight:bold;
+    font-size:14px;
+    margin:10px 10px;
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+#showcasebody1 a{
+    text-align:left;
+    display:inline;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+.style1 {font-weight: bold}
+-->
+</style>
+
+<!--Take from here BEGINNING OF FTS-->
+
+
+<!--Take To here END OF FTS-->
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<br><table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tbody><tr valign="bottom">
+
+	
+		<td width="120" class="smallfont"><a rel="nofollow" href="http://forums.devshed.com/newreply.php?do=newreply&noquote=1&p=1691931"><img src="./Julian Date in Python - Dev Shed_files/reply.gif" alt="Reply" border="0" title="Reply"></a></td>
+<td>
+</td>
+	
+<td><center>
+
+
+
+</center></td>
+ 
+<td width="20%" align="center">
+<!-- Add2 - Start -->
+<script language="JavaScript" type="text/javascript">
+<!--
+	var addtoMethod=1;
+	var AddURL = document.location.href;
+	var AddTitle = escape(document.title);
+-->
+</script>
+<script language="JavaScript" src="./Julian Date in Python - Dev Shed_files/add2.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.add2small {
+	font-size: 11px;
+	cursor:pointer;
+}
+.add2head {
+	font-size: 11px;
+	font-weight: bold;
+}
+-->
+</style>
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="660" align="center">
+  <tbody><tr> 
+    <td align="left" class="thead" id="currentPost"><div class="normal">Add This Thread To: </div></td>
+    <td align="left" class="alt1" id="currentPost">
+&nbsp;<span class="add2small" title="Add this page to Delicious" onclick="addto(2)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Delicious.gif" width="16" height="16" border="0"> 
+      <u>Del.icio.us</u></span>
+&nbsp;<span class="add2small" title="Add this page to Digg" onclick="addto(3)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Digg.gif" width="16" height="16" border="0"> 
+      <u>Digg</u></span>
+&nbsp;<span class="add2small" title="Add this page to Google" onclick="addto(5)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Google.gif" width="16" height="16" border="0"> 
+      <u>Google</u></span>
+&nbsp;<span class="add2small" title="Add this page to Spurl" onclick="addto(8)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Spurl.gif" width="16" height="16" border="0"> 
+      <u>Spurl</u></span>
+&nbsp;<span class="add2small" title="Add this page to Blink" onclick="addto(1)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Blink.gif" width="16" height="16" border="0"> 
+      <u>Blink</u></span>
+&nbsp;<span class="add2small" title="Add this page to Furl" onclick="addto(4)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Furl.gif" width="16" height="16" border="0"> 
+      <u>Furl</u></span>
+&nbsp;<span class="add2small" title="Add this page to Simpy" onclick="addto(6)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Simpy.gif" width="16" height="16" border="0"> 
+      <u>Simpy</u></span>	  
+&nbsp;<span class="add2small" title="Add this page to Yahoo! MyWeb" onclick="addto(7)"><img align="absmiddle" src="./Julian Date in Python - Dev Shed_files/AddTo_Yahoo.gif" width="16" height="16" border="0"> 
+      <u>Y! MyWeb</u></span>&nbsp;	  	  	  	  	  	  
+	</td>
+  </tr>
+</tbody></table>
+<!-- Add2 - End -->
+</td>
+	
+
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+<strong>«</strong>
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html?goto=nextoldest">Previous Thread</a>
+		|
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html?goto=nextnewest">Next Thread</a>
+	<strong>»</strong>
+
+		
+<!-- [START HACK='AJAX Feature / Unfeature Thread' VERSION='1.0.0' CHANGEID= 1 ] -->
+		
+<!-- [END HACK='AJAX Feature / Unfeature Thread' VERSION='1.0.0' CHANGEID= 1 ] -->		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html#threadtools">Thread Tools</a>
+		
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch">
+			<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html#threadsearch">Search this Thread</a>
+			
+		</td>
+	
+	
+		<td class="vbmenu_control" id="threadrating">
+			<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html#threadrating">Rate Thread</a>
+			
+		</td>
+	
+	
+	<td class="vbmenu_control" id="displaymodes">
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html#displaymodes">Display Modes</a>
+		
+	</td>
+	
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+   
+<!-- / end content table -->
+
+
+
+<div id="posts">
+
+<!-- *** -->
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+				<div style="padding:0px 0px 6px 0px">
+					<table class="tborder" id="ad12321" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+						<tbody><tr>
+							<td class="thead" id="currentPost">
+								<div class="normal" style="float:right">
+									&nbsp;
+								</div>
+								<div class="normal">
+									<a name="ad12321"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/post_new.gif" alt="Unread" border="0" title="Unread"></a>
+Dev Shed Forums Sponsor:
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="alt1">
+<!-- message -->
+
+<!-- / message -->
+								<div></div>
+							</td>
+						</tr>
+					</tbody></table>
+
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- *** -->
+
+<!-- post #1691931 -->
+
+	<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+	<div style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" id="post1691931" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			
+<!-- checks for warning system -->
+
+	
+	
+	
+	
+
+
+<!-- end of warning system -->
+			
+			#<a rel="nofollow" href="http://forums.devshed.com/showpost.php?p=1691931&postcount=1" target="new"><strong>1</strong></a> &nbsp;
+			
+			
+						
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1691931"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/post_old.gif" alt="Old" border="0" title="Old"></a>
+			
+				December 15th, 2006, 09:09 AM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="6" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div id="postmenu_1691931">
+					
+
+
+<table><tbody><tr><td>
+<a rel="nofollow" href="http://forums.devshed.com/member.php?u=101970">kr5kernel</a></td>
+
+
+
+					<td><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/user_offline.gif" width="15" height="15" alt="kr5kernel is offline" border="0" title="kr5kernel is offline">
+
+</td></tr></tbody></table>
+					<script type="text/javascript"> vbmenu_register("postmenu_1691931", true); </script>
+									</div>				
+				<div class="smallfont">Contributing User</div>
+				
+<div align="left"><img border="0" src="./Julian Date in Python - Dev Shed_files/ds_forums.gif" alt="Dev Shed Newbie (0 - 499 posts)" title="Dev Shed Newbie (0 - 499 posts)"></div>				
+			</td>
+			<td width="100%">&nbsp;</td>
+
+<!-- Show warned sign -->
+
+
+
+<!-- End of show warned sign -->
+
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Join Date: Jun 2004</div>
+
+					
+					<div>
+						Posts: 40
+						<img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="kr5kernel User rank is Just a Lowly Private (1 - 20 Reputation Level)" border="0" title="kr5kernel User rank is Just a Lowly Private (1 - 20 Reputation Level)">&nbsp; 
+<br>Time spent in forums: 9 h 53 m 59 sec
+
+
+
+
+
+
+
+
+
+<br>Reputation Power: 10
+					</div>
+					<div>      </div>
+					<div>   </div>
+				</div>
+				
+			</td>
+		</tr>
+			
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+	<!-- message, attachments, sig -->
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Julian Date in Python</strong>
+			</div>
+
+			<hr size="1" style="color:#FFFFFF">
+			<!-- / icon and title -->
+		
+		
+		<!-- message --><span id="intelliTxt"><!--INFOLINKS_ON-->
+		
+		<div>This is driving me nuts.  What am I missing to convert a date to its Julian date?<br>
+<br>
+IE, 12-15-2006 = 349<br>
+<br>
+Thanks</div>
+		<!--INFOLINKS_OFF--></span><!-- / message -->
+	<div></div>
+		
+		
+		
+		
+		
+		<hr size="1" style="color:#FFFFFF">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tbody><tr>
+			<td align="left" valign="middle">
+								
+			</td>
+			<td align="right" valign="middle" height="40">
+				<div align="right">
+					<!-- controls -->
+					
+					
+					
+						<a rel="nofollow" href="http://forums.devshed.com/newreply.php?do=newreply&p=1691931"><img src="./Julian Date in Python - Dev Shed_files/reply_small.gif" alt="Reply With Quote" width="70" height="22" border="0" title="Reply With Quote"></a>
+					
+					
+					<!-- / controls -->
+				</div>			
+			</td>
+		  </tr>
+		</tbody></table>		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 1691931 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1691931_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">kr5kernel</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/member.php?userid=101970" target="_blank">View Public Profile</a></td></tr>
+	
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="javascript:void(window.open('http://forums.devshed.com/rpg.php?userid=101970', '', 'toolbar=no,scrollbars=no,resizable=no,width=300,height=320'));">View Extended RPG Stats</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/battle.php?do=newbattle&user=kr5kernel">Challenge This User To Battle</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->		
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/private.php?do=newpm&userid=101970">Send a private message to kr5kernel</a></td></tr>
+	
+
+
+	
+<!--	 -->
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=finduser&userid=101970">Find all posts by kr5kernel</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=process&showposts=0&starteronly=1&exactname=1&searchuser=kr5kernel">Find all threads by kr5kernel</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/profile.php?do=addlist&userlist=buddy&u=101970">Add kr5kernel to Your Buddy List</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1691931 popup menu -->
+
+
+
+	</div>
+	 </div>  </div></div>
+
+<!-- / post #1691931 --><!-- post #1692027 -->
+
+	<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+	<div style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->	
+
+
+
+<table class="tborder" id="post1692027" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			
+<!-- checks for warning system -->
+
+	
+	
+	
+	
+
+
+<!-- end of warning system -->
+			
+			#<a rel="nofollow" href="http://forums.devshed.com/showpost.php?p=1692027&postcount=2" target="new"><strong>2</strong></a> &nbsp;
+			
+			
+						
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1692027"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/post_old.gif" alt="Old" border="0" title="Old"></a>
+			
+				December 15th, 2006, 11:23 AM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="6" border="0" width="100%">
+		<tbody><tr>
+			<td class="alt2"><a rel="nofollow" href="http://forums.devshed.com/member.php?u=184667"><img src="./Julian Date in Python - Dev Shed_files/image.php" alt="mu&#39;s Avatar" border="0" title="mu&#39;s Avatar"></a></td>
+			<td nowrap="nowrap">
+			
+				<div id="postmenu_1692027">
+					
+
+
+<table><tbody><tr><td>
+<a rel="nofollow" href="http://forums.devshed.com/member.php?u=184667">mu</a></td>
+
+
+
+					<td><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/user_offline.gif" width="15" height="15" alt="mu is offline" border="0" title="mu is offline">
+
+</td></tr></tbody></table>
+					<script type="text/javascript"> vbmenu_register("postmenu_1692027", true); </script>
+									</div>				
+				<div class="smallfont">Contributing User</div>
+				
+<div align="left"><img border="0" src="./Julian Date in Python - Dev Shed_files/ds_forums.gif" alt="Dev Shed Newbie (0 - 499 posts)" title="Dev Shed Newbie (0 - 499 posts)"></div>				
+			</td>
+			<td width="100%">&nbsp;</td>
+
+<!-- Show warned sign -->
+
+
+
+<!-- End of show warned sign -->
+
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Join Date: Jul 2006</div>
+<div>Location: Dublin, Ireland</div>
+					
+					<div>
+						Posts: 174
+						<img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_greenh.gif" width="8" height="10" alt="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)" border="0" title="mu User rank is Sergeant Major (2000 - 5000 Reputation Level)">&nbsp; 
+<br>Time spent in forums: 3 Days 23 h 39 m 56 sec
+
+
+
+
+
+
+
+
+
+<br>Reputation Power: 44
+					</div>
+					<div>      </div>
+					<div>   </div>
+				</div>
+				
+			</td>
+		</tr>
+			
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+	<!-- message, attachments, sig -->
+	
+		
+		
+		<!-- message --><span id="intelliTxt"><!--INFOLINKS_ON-->
+		
+		<div><div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:2px">Code:</div>
+			
+				<pre class="alt2" style="margin:0px; padding:6px; border:1px inset; width:640px; height:258px; overflow:auto">&gt;&gt;&gt; date = '2006-12-15'
+&gt;&gt;&gt; (year, month, day) = date.split('-')
+&gt;&gt;&gt; year = int(year)
+&gt;&gt;&gt; month = int(month)
+&gt;&gt;&gt; day = int(day)
+&gt;&gt;&gt; import time
+&gt;&gt;&gt; t = time.mktime((year, month, day, 0, 0, 0, 0, 0, 0))
+&gt;&gt;&gt; t
+1166140800.0
+&gt;&gt;&gt; time.gmtime(t)
+(2006, 12, 15, 0, 0, 0, 4, 349, 0)
+&gt;&gt;&gt; time.gmtime(t)[7]
+349
+&gt;&gt;&gt;</pre>
+			
+</div></div>
+		<!--INFOLINKS_OFF--></span><!-- / message -->
+	<div></div>
+		
+		
+		
+		
+		
+		<hr size="1" style="color:#FFFFFF">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tbody><tr>
+			<td align="left" valign="middle">
+								
+			</td>
+			<td align="right" valign="middle" height="40">
+				<div align="right">
+					<!-- controls -->
+					
+					
+					
+						<a rel="nofollow" href="http://forums.devshed.com/newreply.php?do=newreply&p=1692027"><img src="./Julian Date in Python - Dev Shed_files/reply_small.gif" alt="Reply With Quote" width="70" height="22" border="0" title="Reply With Quote"></a>
+					
+					
+					<!-- / controls -->
+				</div>			
+			</td>
+		  </tr>
+		</tbody></table>		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 1692027 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1692027_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">mu</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/member.php?userid=184667" target="_blank">View Public Profile</a></td></tr>
+	
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="javascript:void(window.open('http://forums.devshed.com/rpg.php?userid=184667', '', 'toolbar=no,scrollbars=no,resizable=no,width=300,height=320'));">View Extended RPG Stats</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/battle.php?do=newbattle&user=mu">Challenge This User To Battle</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->		
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/private.php?do=newpm&userid=184667">Send a private message to mu</a></td></tr>
+	
+
+
+	
+<!--	 -->
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=finduser&userid=184667">Find all posts by mu</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=process&showposts=0&starteronly=1&exactname=1&searchuser=mu">Find all threads by mu</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/profile.php?do=addlist&userlist=buddy&u=184667">Add mu to Your Buddy List</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1692027 popup menu -->
+
+
+
+	</div>
+	 </div>  </div></div>
+
+<!-- / post #1692027 --><!-- post #1692032 -->
+
+	<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+	<div style="padding:0px 0px 6px 0px">
+		
+
+
+
+<table class="tborder" id="post1692032" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float:right">
+			&nbsp;
+			
+<!-- checks for warning system -->
+
+	
+	
+	
+	
+
+
+<!-- end of warning system -->
+			
+			#<a rel="nofollow" href="http://forums.devshed.com/showpost.php?p=1692032&postcount=3" target="new"><strong>3</strong></a> &nbsp;
+			
+			
+						
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1692032"><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/post_old.gif" alt="Old" border="0" title="Old"></a>
+			
+				December 15th, 2006, 11:36 AM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="6" border="0" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+			
+				<div id="postmenu_1692032">
+					
+
+
+<table><tbody><tr><td>
+<a rel="nofollow" href="http://forums.devshed.com/member.php?u=101970">kr5kernel</a></td>
+
+
+
+					<td><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/user_offline.gif" width="15" height="15" alt="kr5kernel is offline" border="0" title="kr5kernel is offline">
+
+</td></tr></tbody></table>
+					<script type="text/javascript"> vbmenu_register("postmenu_1692032", true); </script>
+									</div>				
+				<div class="smallfont">Contributing User</div>
+				
+<div align="left"><img border="0" src="./Julian Date in Python - Dev Shed_files/ds_forums.gif" alt="Dev Shed Newbie (0 - 499 posts)" title="Dev Shed Newbie (0 - 499 posts)"></div>				
+			</td>
+			<td width="100%">&nbsp;</td>
+
+<!-- Show warned sign -->
+
+
+
+<!-- End of show warned sign -->
+
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Join Date: Jun 2004</div>
+
+					
+					<div>
+						Posts: 40
+						<img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/reputation_green.gif" width="8" height="10" alt="kr5kernel User rank is Just a Lowly Private (1 - 20 Reputation Level)" border="0" title="kr5kernel User rank is Just a Lowly Private (1 - 20 Reputation Level)">&nbsp; 
+<br>Time spent in forums: 9 h 53 m 59 sec
+
+
+
+
+
+
+
+
+
+<br>Reputation Power: 10
+					</div>
+					<div>      </div>
+					<div>   </div>
+				</div>
+				
+			</td>
+		</tr>
+			
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+	<!-- message, attachments, sig -->
+	
+		
+		
+		<!-- message --><span id="intelliTxt"><!--INFOLINKS_ON-->
+		
+		<div>Thanks!</div>
+		<!--INFOLINKS_OFF--></span><!-- / message -->
+	<div></div>
+		
+		
+		
+		
+		
+		<hr size="1" style="color:#FFFFFF">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tbody><tr>
+			<td align="left" valign="middle">
+								
+			</td>
+			<td align="right" valign="middle" height="40">
+				<div align="right">
+					<!-- controls -->
+					
+					
+					
+						<a rel="nofollow" href="http://forums.devshed.com/newreply.php?do=newreply&p=1692032"><img src="./Julian Date in Python - Dev Shed_files/reply_small.gif" alt="Reply With Quote" width="70" height="22" border="0" title="Reply With Quote"></a>
+					
+					
+					<!-- / controls -->
+				</div>			
+			</td>
+		  </tr>
+		</tbody></table>		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</tbody></table>
+
+<!-- post 1692032 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1692032_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">kr5kernel</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/member.php?userid=101970" target="_blank">View Public Profile</a></td></tr>
+	
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="javascript:void(window.open('http://forums.devshed.com/rpg.php?userid=101970', '', 'toolbar=no,scrollbars=no,resizable=no,width=300,height=320'));">View Extended RPG Stats</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/battle.php?do=newbattle&user=kr5kernel">Challenge This User To Battle</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->		
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/private.php?do=newpm&userid=101970">Send a private message to kr5kernel</a></td></tr>
+	
+
+
+	
+<!--	 -->
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=finduser&userid=101970">Find all posts by kr5kernel</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/search.php?do=process&showposts=0&starteronly=1&exactname=1&searchuser=kr5kernel">Find all threads by kr5kernel</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://forums.devshed.com/profile.php?do=addlist&userlist=buddy&u=101970">Add kr5kernel to Your Buddy List</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1692032 popup menu -->
+
+
+
+	</div>
+	 </div>  </div></div>
+
+<!-- / post #1692032 --></div>
+
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a rel="nofollow" href="http://forums.devshed.com/newreply.php?do=newreply&noquote=1&p=1692032"><img src="./Julian Date in Python - Dev Shed_files/reply.gif" alt="Reply" border="0" title="Reply"></a></td>
+		
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+<br>
+
+<!-- Bottom Breadcrumb -->
+<table width="100%" cellpadding="0">
+  <tbody><tr> 
+    <td> 
+      <font size="-1"> <b>Viewing:</b> <b>  
+      <a rel="nofollow" href="http://forums.devshed.com/">  
+      Dev Shed Forums</a> 
+	&gt;&nbsp;<a class="normalfont" href="http://forums.devshed.com/programming-languages-41/">Programming Languages</a>
+
+	&gt;&nbsp;<a class="normalfont" href="http://forums.devshed.com/python-programming-11/">Python Programming</a>
+ &gt; 
+	Julian Date in Python
+</b></font> 
+    </td>
+  </tr>
+</tbody></table>
+<!-- END Bottom Breadcrumb -->
+
+<br>
+
+<div class="smallfont" align="center">
+	<strong>«</strong>
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html?goto=nextoldest">Previous Thread</a>
+		|
+		<a rel="nofollow" href="http://forums.devshed.com/python-programming-11/julian-date-in-python-410345.html?goto=nextnewest">Next Thread</a>
+	<strong>»</strong>
+</div>
+
+<!--  ads go here -->
+<div style="min-height:240px;" class="ads-ads">
+ <h2>Developer Shed Advertisers and Affiliates</h2>
+<div id="ads-wrap"><ul class="ad-block-header clearfix">
+
+<li></li><li><a onclick="switchUrl(&#39;http://services.seekdotnet.com/aff.php?aff=209&#39;, event)" rel="nofollow" target="_blank" href="http://www.seekdotnet.com/"><img src="./Julian Date in Python - Dev Shed_files/Seekdotnet_125x125.jpg" border="0"></a><h5><a href="http://forums.aspfree.com/guide-77/seekdotnet-reviews-535858.html">SEEKDOTNET Reviews</a></h5></li>
+
+<li></li><li><a onclick="switchUrl(&#39;http://www.kqzyfj.com/click-6233268-10459963&#39;, event)" rel="nofollow" target="_blank" href="http://www.dreamtemplate.com/"><img src="./Julian Date in Python - Dev Shed_files/DTemplates_New.gif" border="0"></a><h5><a href="http://forums.aspfree.com/guide-77/dream-templates-reviews-535870.html">Dream Template Reviews</a></h5></li>
+
+<li></li><li><a onclick="switchUrl(&#39;http://www.kqzyfj.com/click-6233268-11114982&#39;, event)" rel="nofollow" target="_blank" href="http://www.autodesk.com/"><img src="./Julian Date in Python - Dev Shed_files/AutoDesk.jpg" border="0"></a><h5><a href="http://forums.aspfree.com/guide-77/autodesk-reviews-535867.html">AutoDesk Reviews</a></h5></li>
+
+<li><a onclick="switchUrl(&#39;https://www.majesticseo.com/&#39;, event)" rel="nofollow" target="_blank" href="http://www.majesticseo.com/"><img src="./Julian Date in Python - Dev Shed_files/majesticseo.png" alt="Majesticseo"></a><h5><a href="http://forums.seochat.com/guide-90/majesticseo-reviews-465418.html">MajesticSEO Reviews</a></h5></li>
+
+<li></li><li><a onclick="switchUrl(&#39;http://www.kqzyfj.com/click-6233268-10648897&#39;, event)" rel="nofollow" target="_blank" href="http://www.avg.com/"><img src="./Julian Date in Python - Dev Shed_files/AVG_New.jpg" border="0"></a><h5><a href="http://forums.aspfree.com/guide-77/avg-technologies-reviews-535880.html">AVG Reviews</a></h5></li>
+
+</ul>
+</div>
+ </div>
+<!--  ads go here -->
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tbody><tr> 
+    <td width="50%" align="center">
+      </td>
+    <td width="50%" align="center"></td>
+  </tr>
+</tbody></table>
+
+<br>
+
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tbody><tr>
+	<td class="thead">Thread Tools<a name="threadtools">&nbsp;</a></td>
+	<td class="thead">Search this Thread<a name="threadsearch">&nbsp;</a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1">
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+
+		<div><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/sendtofriend.gif" alt="Email this Page" vspace="1" title="Email this Page"> <a rel="nofollow" href="http://forums.devshed.com/sendmessage.php?do=sendtofriend&t=410345">Email this Page</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="http://forums.devshed.com/search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="">
+		<input type="hidden" name="do" value="process">
+		<input type="hidden" name="searchthread" value="1">
+		<input type="hidden" name="showposts" value="1">
+		<input type="hidden" name="searchthreadid" value="410345">
+		<strong>Search this Thread</strong>:<br>
+		<input type="text" class="bginput" name="query" size="20" style="width:175px"><!-- go button -->
+<input type="submit" class="button" value="Go"><br>
+		<a rel="nofollow" href="http://forums.devshed.com/search.php">Advanced Search</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="thead">Display Modes<a name="displaymodes">&nbsp;</a></td>
+	<td class="thead">Rate This Thread<a name="threadrating">&nbsp;</a></td>
+</tr>
+<tr valign="top">
+	<td class="alt2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/mode_linear.gif" alt="Linear Mode" vspace="1" title="Linear Mode"> <strong>Linear Mode</strong></div>
+		<div><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/mode_hybrid.gif" alt="Hybrid Mode" vspace="1" title="Hybrid Mode"> <a rel="nofollow" href="http://forums.devshed.com/showthread.php?mode=hybrid&t=410345">Switch to Hybrid Mode</a></div>
+		<div><img class="inlineimg" src="./Julian Date in Python - Dev Shed_files/mode_threaded.gif" alt="Threaded Mode" vspace="1" title="Threaded Mode"> <a rel="nofollow" href="http://forums.devshed.com/showthread.php?p=1691931&mode=threaded#post1691931">Switch to Threaded Mode</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	<td class="alt2">
+	
+	<!-- rate this thread -->
+	<form action="http://forums.devshed.com/threadrate.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="70f00f82ff42f1b56686db6f07e59fa6">
+		<input type="hidden" name="t" value="410345">
+		<input type="hidden" name="pp" value="15">
+		<input type="hidden" name="page" value="1">
+		<strong>Rate This Thread</strong>:<br>
+		<select name="vote" onchange="this.form.submit()" style="width:175px">
+			<optgroup label="Choose a rating">
+				<option value="5">5 : Excellent</option>
+				<option value="4">4 : Good</option>
+				<option value="3">3 : Average</option>
+				<option value="2">2 : Bad</option>
+				<option value="1">1 : Terrible</option>
+			</optgroup>
+		</select><!-- go button -->
+<input type="submit" class="button" value="Go">
+	</div>
+	</form>
+	<!-- / rate this thread -->
+	
+	</td>
+</tr>
+</tbody></table>
+<br>
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a rel="nofollow" style="float:right" href="http://forums.devshed.com/#top" onclick="return toggle_collapse(&#39;forumrules&#39;)"><img id="collapseimg_forumrules" src="./Julian Date in Python - Dev Shed_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr>
+		
+		<div><a rel="nofollow" href="http://forums.devshed.com/misc.php?do=bbcode" target="_blank">vB code</a> is <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://forums.devshed.com/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://forums.devshed.com/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+
+<a rel="nofollow" href="http://forums.devshed.com/Warn.php?do=ViewMyWarnings">View Your Warnings</a> | 
+
+<a rel="nofollow" href="http://forums.devshed.com/search.php?do=getnew">New Posts</a> | 
+<a rel="nofollow" href="http://forums.devshed.com/latest-news-updated-hourly-122/">Latest News</a> | 
+<a rel="nofollow" href="http://forums.devshed.com/#latest_threads_table">Latest Threads</a> | 
+<a rel="nofollow" href="http://forums.devshed.com/#shoutbox_location">Shoutbox</a>
+<br>
+	<form action="http://forums.devshed.com/forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="">
+	<input type="hidden" name="daysprune" value="">
+	<strong>Forum Jump</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1">Please select one</option>
+			<option value="cp">User Control Panel</option>
+			<option value="pm">Private Messages</option>
+			<option value="subs">Subscriptions</option>
+			<option value="wol">Who's Online</option>
+			<option value="search">Search Forums</option>
+			<option value="home">Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="41" class="fjdpth0"> Programming Languages</option><option value="5" class="fjdpth1">&nbsp; &nbsp;  PHP Development</option><option value="167" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  PHP FAQs and Stickies</option><option value="6" class="fjdpth1">&nbsp; &nbsp;  Perl Programming</option><option value="168" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Perl FAQs and Stickies</option><option value="42" class="fjdpth1">&nbsp; &nbsp;  C Programming</option><option value="169" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  C Programming FAQs and Stickies</option><option value="9" class="fjdpth1">&nbsp; &nbsp;  Java Help</option><option value="170" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Java FAQs</option><option value="11" class="fjsel" selected="selected">&nbsp; &nbsp;  Python Programming</option><option value="171" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Python Programming FAQs</option><option value="142" class="fjdpth1">&nbsp; &nbsp;  Ruby Programming</option><option value="172" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ruby Programming FAQs</option><option value="141" class="fjdpth1">&nbsp; &nbsp;  Game Development</option><option value="173" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Game Development FAQs</option><option value="86" class="fjdpth0"> Programming Languages - More</option><option value="51" class="fjdpth1">&nbsp; &nbsp;  ASP Programming</option><option value="174" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ASP Programming FAQs</option><option value="87" class="fjdpth1">&nbsp; &nbsp;  .Net Development</option><option value="175" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  .Net Development FAQs</option><option value="52" class="fjdpth1">&nbsp; &nbsp;  Visual Basic Programming</option><option value="176" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Visual Basic Programming FAQs</option><option value="43" class="fjdpth1">&nbsp; &nbsp;  Software Design</option><option value="177" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Software Design FAQs</option><option value="84" class="fjdpth1">&nbsp; &nbsp;  ColdFusion Development</option><option value="178" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  ColdFusion Development FAQs</option><option value="90" class="fjdpth1">&nbsp; &nbsp;  Delphi Programming</option><option value="179" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Delphi Programming FAQs</option><option value="147" class="fjdpth1">&nbsp; &nbsp;  Regex Programming</option><option value="180" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Regex Programming FAQs</option><option value="19" class="fjdpth1">&nbsp; &nbsp;  XML Programming</option><option value="181" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  XML Programming FAQs</option><option value="139" class="fjdpth1">&nbsp; &nbsp;  Other Programming Languages</option><option value="182" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Other Programming Languages FAQs</option><option value="27" class="fjdpth0"> Web Design</option><option value="1" class="fjdpth1">&nbsp; &nbsp;  HTML Programming</option><option value="183" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  HTML Programming FAQs</option><option value="115" class="fjdpth1">&nbsp; &nbsp;  JavaScript Development</option><option value="184" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  JavaScript Development FAQs</option><option value="116" class="fjdpth1">&nbsp; &nbsp;  CSS Help</option><option value="185" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  CSS Help FAQs</option><option value="38" class="fjdpth1">&nbsp; &nbsp;  Flash Help</option><option value="186" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Flash Help FAQs</option><option value="88" class="fjdpth1">&nbsp; &nbsp;  Photoshop Help</option><option value="187" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Photoshop Help FAQs</option><option value="2" class="fjdpth1">&nbsp; &nbsp;  Web Design Help</option><option value="188" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Web Design Help FAQs</option><option value="89" class="fjdpth1">&nbsp; &nbsp;  Website Critiques</option><option value="189" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Website Critiques FAQs</option><option value="108" class="fjdpth1">&nbsp; &nbsp;  Search Engine Optimization</option><option value="190" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Search Engine Optimization FAQs</option><option value="166" class="fjdpth0"> Mobile Programming</option><option value="20" class="fjdpth1">&nbsp; &nbsp;  Mobile Programming</option><option value="191" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Mobile Programming FAQs</option><option value="164" class="fjdpth1">&nbsp; &nbsp;  iPhone SDK Development</option><option value="192" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  iPhone SDK Development FAQs</option><option value="165" class="fjdpth1">&nbsp; &nbsp;  Android Development</option><option value="193" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Android Development FAQs</option><option value="152" class="fjdpth1">&nbsp; &nbsp;  BlackBerry Development</option><option value="194" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  BlackBerry Development FAQs</option><option value="91" class="fjdpth0"> Web Site Management</option><option value="92" class="fjdpth1">&nbsp; &nbsp;  Business Help</option><option value="195" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Business Help FAQs</option><option value="93" class="fjdpth1">&nbsp; &nbsp;  Development Software</option><option value="196" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Development Software FAQs</option><option value="94" class="fjdpth1">&nbsp; &nbsp;  Scripts</option><option value="197" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Scripts FAQs</option><option value="28" class="fjdpth0"> Databases</option><option value="46" class="fjdpth1">&nbsp; &nbsp;  Database Management</option><option value="198" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Database Management FAQs</option><option value="114" class="fjdpth1">&nbsp; &nbsp;  DB2 Development</option><option value="199" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DB2 Development FAQs</option><option value="4" class="fjdpth1">&nbsp; &nbsp;  MySQL Help</option><option value="200" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  MySQL Help FAQs</option><option value="21" class="fjdpth1">&nbsp; &nbsp;  PostgreSQL Help</option><option value="201" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  PostgreSQL Help FAQs</option><option value="61" class="fjdpth1">&nbsp; &nbsp;  Firebird SQL Development</option><option value="202" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Firebird SQL Development FAQs</option><option value="95" class="fjdpth1">&nbsp; &nbsp;  MS SQL Development</option><option value="203" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  MS SQL Development FAQs</option><option value="96" class="fjdpth1">&nbsp; &nbsp;  Oracle Development</option><option value="204" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Oracle Development FAQs</option><option value="76" class="fjdpth1">&nbsp; &nbsp;  LDAP Programming</option><option value="205" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  LDAP Programming FAQs</option><option value="45" class="fjdpth0"> System Administration</option><option value="111" class="fjdpth1">&nbsp; &nbsp;  Mail Server Help</option><option value="206" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Mail Server Help FAQs</option><option value="15" class="fjdpth1">&nbsp; &nbsp;  Apache Development</option><option value="207" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Apache Development FAQs</option><option value="17" class="fjdpth1">&nbsp; &nbsp;  Security and Cryptography</option><option value="208" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Security and Cryptography FAQs</option><option value="117" class="fjdpth1">&nbsp; &nbsp;  Antivirus Protection</option><option value="209" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Antivirus Protection FAQs</option><option value="36" class="fjdpth1">&nbsp; &nbsp;  DNS</option><option value="210" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  DNS FAQs</option><option value="97" class="fjdpth1">&nbsp; &nbsp;  IIS</option><option value="211" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  IIS FAQs</option><option value="109" class="fjdpth1">&nbsp; &nbsp;  Networking Help</option><option value="212" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Networking Help FAQs</option><option value="113" class="fjdpth1">&nbsp; &nbsp;  FTP Help</option><option value="213" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  FTP Help FAQs</option><option value="30" class="fjdpth0"> Operating Systems</option><option value="31" class="fjdpth1">&nbsp; &nbsp;  BSD Help</option><option value="214" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  BSD Help FAQs</option><option value="33" class="fjdpth1">&nbsp; &nbsp;  Linux Help</option><option value="215" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Linux Help FAQs</option><option value="35" class="fjdpth1">&nbsp; &nbsp;  UNIX Help</option><option value="216" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  UNIX Help FAQs</option><option value="34" class="fjdpth1">&nbsp; &nbsp;  Windows Help</option><option value="217" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Windows Help FAQs</option><option value="118" class="fjdpth1">&nbsp; &nbsp;  Mac Help</option><option value="218" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Mac Help FAQs</option><option value="98" class="fjdpth0"> Web Hosting</option><option value="12" class="fjdpth1">&nbsp; &nbsp;  Web Hosting</option><option value="219" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Web Hosting FAQs</option><option value="99" class="fjdpth1">&nbsp; &nbsp;  Free Web Hosting</option><option value="220" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Free Web Hosting FAQs</option><option value="101" class="fjdpth1">&nbsp; &nbsp;  Web Hosting Requests</option><option value="221" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Web Hosting Requests FAQs</option><option value="100" class="fjdpth1">&nbsp; &nbsp;  Web Hosting Offers</option><option value="222" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Web Hosting Offers FAQs</option><option value="102" class="fjdpth0"> Computer Hardware</option><option value="103" class="fjdpth1">&nbsp; &nbsp;  Computer Hardware</option><option value="104" class="fjdpth1">&nbsp; &nbsp;  CPUs</option><option value="224" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  CPUs FAQs</option><option value="105" class="fjdpth1">&nbsp; &nbsp;  Cooling</option><option value="225" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Cooling FAQs</option><option value="163" class="fjdpth1">&nbsp; &nbsp;  Embedded Programming</option><option value="226" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Embedded Programming FAQs</option><option value="106" class="fjdpth1">&nbsp; &nbsp;  Motherboards</option><option value="227" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Motherboards FAQs</option><option value="107" class="fjdpth1">&nbsp; &nbsp;  Multimedia Hardware</option><option value="228" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Multimedia Hardware FAQs</option><option value="29" class="fjdpth0"> Other</option><option value="26" class="fjdpth1">&nbsp; &nbsp;  Dev Shed Lounge</option><option value="229" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dev Shed Lounge FAQs</option><option value="65" class="fjdpth1">&nbsp; &nbsp;  Development Articles</option><option value="230" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Development Articles FAQs</option><option value="16" class="fjdpth1">&nbsp; &nbsp;  Beginner Programming</option><option value="231" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Beginner Programming FAQs</option><option value="57" class="fjdpth1">&nbsp; &nbsp;  Hire A Programmer</option><option value="232" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Hire A Programmer FAQs</option><option value="40" class="fjdpth1">&nbsp; &nbsp;  Project Help Wanted</option><option value="233" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Project Help Wanted FAQs</option><option value="122" class="fjdpth0"> Latest News Updated Hourly</option><option value="123" class="fjdpth1">&nbsp; &nbsp;  Technology News</option><option value="124" class="fjdpth1">&nbsp; &nbsp;  Business News</option><option value="125" class="fjdpth1">&nbsp; &nbsp;  Science News</option><option value="119" class="fjdpth0"> Forum Information</option><option value="127" class="fjdpth1">&nbsp; &nbsp;  Forum Rules/Guidelines</option><option value="235" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Forum Rules/Guidelines FAQs</option><option value="120" class="fjdpth1">&nbsp; &nbsp;  Forum Announcements</option><option value="236" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Forum Announcements FAQs</option><option value="143" class="fjdpth1">&nbsp; &nbsp;  Dev Shed Gaming Center</option><option value="144" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Go to the Dev Shed Battle Arena</option><option value="145" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Go to the Dev Shed Arcade Games</option><option value="146" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;   Go to the Legend of the Green Dragon</option><option value="121" class="fjdpth1">&nbsp; &nbsp;  Suggestions &amp; Feedback</option><option value="237" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Suggestions &amp; Feedback FAQs</option>
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Go">
+	</form>
+</div>
+			</td>
+		</tr>		
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+ </div></div></div></td> </tr> </tbody></table> 
+<!-- /content area table --></td>
+</tr> </tbody></table>  
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+     <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td width="20"><img src="./Julian Date in Python - Dev Shed_files/devshed-02.jpg" width="20" height="29"></td>
+        <td width="65%" bgcolor="#406c47"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr> 
+            <td class="txtwhite" valign="middle">
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/">Forums</a><span class="foottxt">: »</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/register.php?action=signup">Register</a><span class="foottxt">&nbsp;«&nbsp;|&nbsp;</span>
+<a class="footlink" rel="dofollow" href="http://seotools.devshed.com/">Free Tools</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/usercp.php">User CP</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/dev-shed-gaming-center-143/">Games</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/calendar.php">Calendar</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/memberlist.php">Members</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/forum-rules-guidelines-127/">FAQs</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.devshed.com/sitemap/">Sitemap</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<span class="footlink" onclick="window.location=&#39;http://www.developershed.com/esupport/&#39;">Support</span><span class="foottxt">&nbsp;|&nbsp;</span>
+<a rel="nofollow" href="http://forums.devshed.com/rss/"><img src="./Julian Date in Python - Dev Shed_files/forum-rss3.gif" width="24" height="21" border="0" vspace="0" align="absmiddle"></a>
+            </td></tr></tbody></table></td>
+            <td width="100%"><div align="right">
+                    <table border="0" cellspacing="0" cellpadding="0" align="right">
+                      <tbody><tr>
+<td width="100%"> 
+<script type="text/javascript">
+	  <!--
+	  function jumpLang( obj )
+	  {
+			if ( obj.options[obj.selectedIndex].value == '1' )
+			{
+				window.location = 'http://forums.seochat.com/forumlang.php?lang=spanish';
+			}
+			else if ( obj.options[obj.selectedIndex].value == '2' )
+			{
+				window.location = 'http://forums.seochat.com/forumlang.php?lang=french';
+			}
+			else if ( obj.options[obj.selectedIndex].value == '3' )
+			{
+				window.location = 'http://forums.seochat.com/forumlang.php?lang=german';
+			}
+			else if ( obj.options[obj.selectedIndex].value == '4' )
+			{
+				window.location = 'http://forums.seochat.com/forumlang.php?lang=italian';
+			}
+			else if ( obj.options[obj.selectedIndex].value == '5' )
+			{
+				window.location = 'http://forums.seochat.com/forumlang.php?lang=portuguese';
+			}
+			else if ( obj.options[obj.selectedIndex].value == '6' )
+			{
+				window.location = 'http://forums.seochat.com/';
+			}
+	  }
+	  //-->
+	  </script>
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" bgcolor="#406c47" height="25">
+                    <tbody><tr> 
+<td>&nbsp;&nbsp;</td>
+<td height="26" align="right" style="float:right;width:210px;_width:210px;padding-right:3px;padding-top:3px;_padding-top:0px;_padding-right:3px;"><form style="display:inline;" action="http://forums.devshed.com/googlecse.php" id="cse-search-box"><input type="hidden" name="cx" value="partner-pub-5054715448040917:7689756459"><input type="hidden" name="cof" value="FORID:11"><input type="hidden" name="ie" value="ISO-8859-1"><input type="text" name="q" size="20"> <input type="image" style="margin-top: -3px;_margin-top:2px;" align="absmiddle" src="./Julian Date in Python - Dev Shed_files/google_search.gif" height="20" width="56" name="sa" value="Search"><script type="text/javascript" src="./Julian Date in Python - Dev Shed_files/brand"></script></form></td>
+                    </tr>
+                </tbody></table>
+</td>
+      <!-- xxx -->
+      <td>&nbsp;</td>
+      </tr>
+    </tbody></table></div></td>
+  </tr>
+</tbody></table>
+     <br>
+<!-- eph -->
+<br>
+  
+<!-- old pos -->
+  
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+<style type="text/css">
+<!--
+ .newlinks {
+cursor:pointer; cursor:hand;
+text-decoration: underline; color:blue;
+font-family: Verdana,Arial,Helvetica; 
+font-size: 10px;
+}
+-->
+</style>
+<center>Powered by: vBulletin Version 3.0.5<br>Copyright ©2000 - 2013, Jelsoft Enterprises Ltd.</center>
+<br><div id="botfooter" align="center">
+<span class="bottxt">© 2003-2013 by <a rel="dofollow" href="http://www.developershed.com/">Developer Shed</a>. All rights reserved. DS Cluster  - Follow our <a rel="dofollow" href="http://forums.devshed.com/forum_sitemap.html">Sitemap</a></span>
+	</div>
+
+<script type="text/javascript" language="JavaScript">
+function ttgo(url) {
+if (url.length > 1) {
+document.location.href = "http://" + url + "/";
+}
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+_qevents.push({
+qacct:"p-5c0XF2TvTNfd2"
+});
+</script>
+
+<noscript>
+&lt;div style="display:none;"&gt;
+&lt;img src="//pixel.quantserve.com/pixel/p-5c0XF2TvTNfd2.gif" border="0" height="1" width="1" alt="Quantcast"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<!-- Overlay - infusionsoft -->
+
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		<!-- thread ratings form here -->
+	
+	<!-- / thread rate -->
+</div>
+
+
+</body></html>

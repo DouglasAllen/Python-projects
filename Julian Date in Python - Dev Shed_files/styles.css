@@ -1,0 +1,205 @@
+.txt {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #000000;
+        text-decoration: none;
+
+}
+.txtwhite {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: bold;
+
+
+}
+
+
+.overlink {
+  	 cursor:pointer; 
+  	 cursor:hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: underline;
+        font-weight: bold;
+}
+
+.txtunderline {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #666666;
+        text-decoration: underline;
+}
+
+.boxAds, a.boxAds:link, a.boxAds:visited, a.boxAds:active, a.boxAds:hover{ 
+     background-color: #000066;
+     font-family: Arial, Helvetica, sans-serif; 
+     font-weight: bold; 
+     font-size: 8pt; 
+     color: #FFFFCC; 
+}
+
+.nettxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7px;
+	color: #333333;
+	text-decoration: none;
+
+}
+
+A.network:link, A.network:visited, A.network:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 9px;
+  color: #000000;
+  text-decoration: none;}
+  A.network:hover {
+  color:#000000;
+  text-decoration: underline;
+  }
+
+  A.sidenav:link, A.sidenav:visited{
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 11px;
+  color: #000000;
+  text-decoration: none;}
+  A.sidenav:hover {
+  color:#000000;
+  text-decoration: underline;
+  }
+  A.sidenav2:link, A.sidenav2:visited, A.sidenav2:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 10px;
+  color: #000000;
+  text-decoration: none;}
+  A.sidenav2:hover {
+  color:#000000;
+  text-decoration: underline;
+  }
+  A.linkscolor:link, A.linkscolor:visited, A.linkscolor:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 11px;
+  color: #666666;
+  text-decoration: none;}
+  A.linkscolor:hover {
+  color:#FF6600;
+  text-decoration: none;
+  }
+  A.linkswhite:link, A.linkswhite:visited, A.linkswhite:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 11px;
+  color: #FFFFFF;
+  text-decoration: none;
+  }
+  A.linkswhite:hover {
+  color:#FFFFFF;
+  text-decoration: underline;
+  }
+
+
+.txtblack {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 9pt;
+        color: #000000;
+        line-height: 10px;
+
+}
+.form {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        color: #333333;
+        text-decoration: none;
+}
+A.sidenav:active  {
+        font-family: Verdana, Arial, Helvetica;
+        font-size: 11px;
+        color: #000000;
+        text-decoration: none;
+        line-height: 11px;
+}
+.titblack {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        color: #000000;
+}
+.linksblack {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #000000;
+        text-decoration: underline;
+}
+.txtgray {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #333333;
+}
+.buttons {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #000000;
+        text-decoration: underline;
+}
+.txtwhitelight {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+}
+
+
+
+A.mylinks:link, A.mylinks:visited, A.mylinks:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 11px;
+  color: #000000;
+
+}
+
+A.mylinks:hover {
+  color:#0354A5;
+  text-decoration: none;
+}
+
+
+A.biglinks:link, A.biglinks:visited, A.biglinks:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 13px;
+  color: #000000;
+
+}
+
+A.biglinks:hover {
+  color:#0354A5;
+  text-decoration: none;
+}
+
+.textAd {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+}
+
+A.textAd:link, A.textAd:visited, A.textAd:active {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ffffff;
+}
+
+A.textAd:hover {
+  color:#FFFFCC;
+  text-decoration: none;
+}
+
+A.bclinks:link, A.bclinks:visited, A.bclinks:active {
+  font-family: Verdana,Arial,Helvetica;
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+a.bclinks:hover {
+  text-decoration: none;
+}

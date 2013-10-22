@@ -1,5 +1,0 @@
-rply
-# Only a test requirement
-pytest
-invoke
-requests

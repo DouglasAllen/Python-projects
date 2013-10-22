@@ -1,2 +1,0 @@
-fails:Kernel#equal? returns true if obj and anObject have the same value.
-fails:Kernel#equal? is unaffected by overriding __id__

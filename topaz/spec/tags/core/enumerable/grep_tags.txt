@@ -1,1 +1,0 @@
-fails:Enumerable#grep can use $~ in the block when used with a Regexp
