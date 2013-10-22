@@ -7,7 +7,7 @@ class Fahrenheit2Celcuis:
 
 def test():
     f_temp = 32.018
-    c_temp = FahrenheittoCelcuis.convert(FahrenheittoCelcuis, f_temp)
+    c_temp = Fahrenheit2Celcuis.convert(Fahrenheit2Celcuis, f_temp)
     print("{0:f}".format(c_temp))
      
 if __name__ == "__main__":

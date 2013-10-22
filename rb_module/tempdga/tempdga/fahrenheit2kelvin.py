@@ -7,8 +7,8 @@ class Fahrenheit2Kelvin:
 
 def test():
     f_temp = 32.018
-    c_temp = FahrenheittoKelvin.convert(FahrenheittoKelvin, f_temp)
-    print("{0:f}".format(c_temp))
+    k_temp = Fahrenheit2Kelvin.convert(Fahrenheit2Kelvin, f_temp)
+    print("{0:f}".format(k_temp))
      
 if __name__ == "__main__":
     test()       
