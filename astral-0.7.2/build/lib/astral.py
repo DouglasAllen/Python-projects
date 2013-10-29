@@ -1813,13 +1813,13 @@ class Astral(object):
         return (1.000001018 * (1 - e * e)) / (1 + e * cos(radians(v)))
 
     def _sun_rt_ascension(self, juliancentury):
-        e = self._obliquity_correction(juliancentury)
+        epsilon = self._obliquity_correction(juliancentury)
         lambd = self._sun_apparent_long(juliancentury)
  
-        tananum = (cos(radians(e)) * sin(radians(lambd)))
+        tananum = (cos(radians(epsilon)) * sin(radians(lambd)))
         tanadenom = (cos(radians(lambd)))
 
-        return degrees(atan2(tananum, tanadenom))
+        return degrees(atan2(-tananum, -tanadenom)) + 180.0
 
     def _sun_true_anomoly(self, juliancentury):
         m = self._geom_mean_anomaly_sun(juliancentury)
