@@ -53,6 +53,7 @@ solar_apparent_lng = a._sun_apparent_long(a._jday_to_jcentury(a._julianday(d)))
 solar_right_ascension = a._sun_rt_ascension(a._jday_to_jcentury(a._julianday(d)))
 print(solar_mean_anomaly)
 print(solar_true_anomaly)
+print(solar_mean_lng)
 print(solar_true_lng)
 print(solar_apparent_lng)
 print(solar_right_ascension)
@@ -60,5 +61,8 @@ eot = solar_mean_anomaly - solar_true_anomaly + solar_apparent_lng - solar_right
 print(eot)
 print(eot * 4.0)
 eot = solar_mean_anomaly - solar_true_anomaly + solar_true_lng - solar_right_ascension
+print(eot)
+print(eot * 4.0)
+eot = solar_mean_anomaly - solar_true_anomaly + solar_mean_lng - solar_right_ascension
 print(eot)
 print(eot * 4.0)
